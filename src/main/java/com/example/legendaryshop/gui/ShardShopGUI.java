@@ -50,7 +50,9 @@ public class ShardShopGUI {
             inv.setItem(i, filler);
         }
 
-        int slot = 9;
+        // Cot 4 (slot 12) thay vi cot 1 (slot 9), de 3 key nam giua hang thay vi dong sat trai
+        int keyStartSlot = 12;
+        int slot = keyStartSlot;
         for (String id : keyIds) {
             ConfigurationSection section = plugin.getConfig().getConfigurationSection("shard-shop.keys." + id);
             if (section == null) {
