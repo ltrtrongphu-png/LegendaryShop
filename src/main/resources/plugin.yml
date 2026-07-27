@@ -1,0 +1,26 @@
+name: LegendaryShop
+version: '1.0.0'
+main: com.example.legendaryshop.LegendaryShop
+api-version: '1.21'
+author: YourName
+description: Plugin shop GUI - mua bang tien (Vault) hoac bang Shards (XShards), ho tro spawner qua SmartSpawner
+
+softdepend: [Vault, PlaceholderAPI, XShards, SmartSpawner]
+
+commands:
+  shop:
+    description: Mo GUI shop chinh
+    usage: /<command>
+    aliases: [legendaryshop, lshop]
+  legendaryshopadmin:
+    description: Lenh quan tri LegendaryShop
+    usage: /legendaryshopadmin <reload>
+    aliases: [lsadmin]
+
+permissions:
+  legendaryshop.use:
+    description: Quyen dung lenh /shop
+    default: true
+  legendaryshop.admin:
+    description: Quyen quan tri LegendaryShop (reload...)
+    default: op

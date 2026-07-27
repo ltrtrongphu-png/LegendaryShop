@@ -1,0 +1,226 @@
+# =========================================
+#  LegendaryShop - Config
+# =========================================
+
+gui:
+  main-shop-title: "&8Legendary &6Shop"
+  category-title-prefix: "&8Shop - "   # vd: "Shop - End", "Shop - Nether"...
+  shard-shop-title: "&8Shop - &dShard"
+  buy-gui-title-prefix: "&8Mua - "
+
+messages:
+  not-enough-money: "&cBan khong du tien de mua vat pham nay."
+  not-enough-shards: "&cBan khong du Shards de mua vat pham nay. &7(Can: %price% Shards)"
+  inventory-full: "&cTui do cua ban da day."
+  purchase-success-money: "&fBan da mua &b%amount%x %item% &fvoi gia &a$%price%"
+  purchase-success-shards: "&fBan da mua &b%amount%x %item% &fvoi gia &d%price% Shards"
+  missing-dependency: "&cChuc nang nay can plugin &e%plugin% &cnhung server chua cai. Lien he Admin."
+
+sounds:
+  purchase-successful: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  purchase-successful-volume: 0.5
+  purchase-unsuccessful: "ENTITY_VILLAGER_NO"
+  purchase-unsuccessful-volume: 0.5
+  click: "UI_BUTTON_CLICK"
+  click-volume: 0.5
+
+# =========================================
+# CAC DANH MUC MUA BANG TIEN (Vault)
+# =========================================
+categories:
+  end:
+    display-name: "End"
+    icon: ENDER_CHEST
+    items:
+      enderchest:
+        material: ENDER_CHEST
+        price: 2500
+      end-enderpearl:
+        material: ENDER_PEARL
+        price: 75
+      endstone:
+        material: END_STONE
+        price: 8
+        default-quantity: 16
+      dragonbreath:
+        material: DRAGON_BREATH
+        price: 1000
+      endrod:
+        material: END_ROD
+        price: 100
+      chorusfruit:
+        material: CHORUS_FRUIT
+        price: 10
+      poppedchorusfruit:
+        material: POPPED_CHORUS_FRUIT
+        price: 15
+      shulkershell:
+        material: SHULKER_SHELL
+        price: 350
+      shulkerbox:
+        material: SHULKER_BOX
+        price: 800
+
+  nether:
+    display-name: "Nether"
+    icon: NETHERRACK
+    items:
+      blazerod:
+        material: BLAZE_ROD
+        price: 150
+      netherwart:
+        material: NETHER_WART
+        price: 15
+      glowstonedust:
+        material: GLOWSTONE_DUST
+        price: 15
+      magmacream:
+        material: MAGMA_CREAM
+        price: 15
+      ghasttear:
+        material: GHAST_TEAR
+        price: 350
+      quartz:
+        material: QUARTZ
+        price: 15
+      soulsand:
+        material: SOUL_SAND
+        price: 50
+      magmablock:
+        material: MAGMA_BLOCK
+        price: 35
+      cryingobsidian:
+        material: CRYING_OBSIDIAN
+        price: 150
+
+  gear:
+    display-name: "Gear"
+    icon: DIAMOND_CHESTPLATE
+    items:
+      obsidian:
+        material: OBSIDIAN
+        price: 100
+      endcrystal:
+        material: END_CRYSTAL
+        price: 350
+      respawnanchor:
+        material: RESPAWN_ANCHOR
+        price: 1000
+      glowstone:
+        material: GLOWSTONE
+        price: 100
+      totemofundying:
+        material: TOTEM_OF_UNDYING
+        price: 1250
+      gear-enderpearl:
+        material: ENDER_PEARL
+        price: 75
+      gear-goldenapple:
+        material: GOLDEN_APPLE
+        price: 250
+      bottleofenchanting:
+        material: EXPERIENCE_BOTTLE
+        price: 100
+      arrow:
+        material: ARROW
+        price: 250
+        default-quantity: 16
+
+  food:
+    display-name: "Food"
+    icon: COOKED_BEEF
+    items:
+      potato:
+        material: POTATO
+        price: 75
+      sweetberries:
+        material: SWEET_BERRIES
+        price: 50
+      melonslice:
+        material: MELON_SLICE
+        price: 10
+      carrot:
+        material: CARROT
+        price: 65
+      apple:
+        material: APPLE
+        price: 25
+      cookedchicken:
+        material: COOKED_CHICKEN
+        price: 30
+      steak:
+        material: COOKED_BEEF
+        price: 35
+      goldencarrot:
+        material: GOLDEN_CARROT
+        price: 50
+      food-goldenapple:
+        material: GOLDEN_APPLE
+        price: 250
+
+# =========================================
+# SHARD SHOP (mua bang Shards, dung plugin XShards)
+# =========================================
+shard-shop:
+  icon: AMETHYST_SHARD
+
+  # Chia khoa (item thuong, khong gan plugin nao khac, chi la ItemStack co ten/lore rieng)
+  keys:
+    common-key:
+      material: TRIPWIRE_HOOK
+      display-name: "&7Chia Khoa Thuong (Common Key)"
+      price: 200
+    gold-key:
+      material: TRIPWIRE_HOOK
+      display-name: "&6Chia Khoa Vang (Gold Key)"
+      price: 1500
+    amethyst-key:
+      material: TRIPWIRE_HOOK
+      display-name: "&dChia Khoa Ametit (Amethyst Key)"
+      price: 4000
+
+  # Spawner: khi mua se goi lenh cua SmartSpawner de dua dung loai mob cho nguoi choi
+  # entity-type phai dung ten EntityType cua Bukkit (vd PIG, COW, ZOMBIE, ZOMBIFIED_PIGLIN...)
+  spawners:
+    pig-spawner:
+      entity-type: PIG
+      price: 250
+    cow-spawner:
+      entity-type: COW
+      price: 350
+    zombie-spawner:
+      entity-type: ZOMBIE
+      price: 400
+    spider-spawner:
+      entity-type: SPIDER
+      price: 750
+    skeleton-spawner:
+      entity-type: SKELETON
+      price: 500
+    creeper-spawner:
+      entity-type: CREEPER
+      price: 625
+    zombified-piglin-spawner:
+      entity-type: ZOMBIFIED_PIGLIN
+      price: 750
+    blaze-spawner:
+      entity-type: BLAZE
+      price: 1000
+    iron-golem-spawner:
+      entity-type: IRON_GOLEM
+      price: 1500
+
+# =========================================
+# TICH HOP PLUGIN NGOAI
+# =========================================
+integrations:
+  # Lenh console de tru/cong Shards cua XShards - %player% va %amount% se duoc thay the
+  xshards:
+    remove-command: "shards remove %player% %amount%"
+    give-command: "shards give %player% %amount%"
+    # Placeholder PlaceholderAPI de doc so du Shards hien tai cua nguoi choi
+    balance-placeholder: "%xshards_playershards%"
+
+  # Lenh console de SmartSpawner dua spawner dung loai mob cho nguoi choi
+  smartspawner:
+    give-command: "ss give %player% %entitytype% %amount%"
