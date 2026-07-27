@@ -216,9 +216,9 @@ shard-shop:
 integrations:
   # Lenh console de tru/cong Shards cua XShards - %player% va %amount% se duoc thay the
   xshards:
+    check-balance-before-purchase: true
     remove-command: "shards remove %player% %amount%"
     give-command: "shards give %player% %amount%"
-    # Placeholder PlaceholderAPI de doc so du Shards hien tai cua nguoi choi
     balance-placeholder: "%xshards_playershards%"
 
   # Lenh console de SmartSpawner dua spawner dung loai mob cho nguoi choi
