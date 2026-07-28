@@ -16,6 +16,15 @@ commands:
     description: Lenh quan tri LegendaryShop
     usage: /legendaryshopadmin <reload>
     aliases: [lsadmin]
+  sell:
+    description: Ban vat pham dang cam tren tay
+    usage: /<command>
+  sellall:
+    description: Ban tat ca vat pham hop le trong tui do
+    usage: /<command>
+  sellgui:
+    description: Mo GUI keo tha vat pham de ban
+    usage: /<command>
 
 permissions:
   legendaryshop.use:
@@ -24,3 +33,6 @@ permissions:
   legendaryshop.admin:
     description: Quyen quan tri LegendaryShop (reload...)
     default: op
+  legendaryshop.sell:
+    description: Quyen dung /sell, /sellall, /sellgui
+    default: true
