@@ -27,6 +27,7 @@ public class ShopAdminCommand implements CommandExecutor {
         }
 
         plugin.reloadConfig();
+        plugin.getSellManager().load();
         sender.sendMessage(ChatColor.GREEN + "Da reload config.yml cua LegendaryShop!");
         return true;
     }
