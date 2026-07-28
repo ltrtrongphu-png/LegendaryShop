@@ -135,7 +135,8 @@ public class InventoryClickListener implements Listener {
         int keyRows = Math.max(1, (int) Math.ceil(keyIds.size() / 9.0));
         int spawnerStart = 9 + keyRows * 9;
 
-        int keyIndex = slot - 9;
+        int keyStartSlot = 12; // phai khop voi ShardShopGUI (cot 4 cua hang key)
+        int keyIndex = slot - keyStartSlot;
         if (keyIndex >= 0 && keyIndex < keyIds.size()) {
             openKeyBuyGui(player, keyIds.get(keyIndex));
             return;
@@ -264,7 +265,8 @@ public class InventoryClickListener implements Listener {
                 return;
             }
 
-            if (shards.isBalanceCheckAvailable()) {
+            boolean checkBalance = plugin.getConfig().getBoolean("integrations.xshards.check-balance-before-purchase", true);
+            if (checkBalance && shards.isBalanceCheckAvailable()) {
                 double balance = shards.getBalance(player);
                 if (balance >= 0 && balance < totalPrice) {
                     player.sendMessage(plugin.msg("not-enough-shards").replace("%price%", formatNumber(totalPrice)));
@@ -298,7 +300,13 @@ public class InventoryClickListener implements Listener {
         }
 
         plugin.getShopManager().clear(player);
-        player.closeInventory();
+
+        // Quay lai man shop (thay vi dong han GUI) de nguoi choi mua tiep khong bi kick ra ngoai
+        if ("shard".equals(context.getCategory())) {
+            new ShardShopGUI(plugin).open(player);
+        } else {
+            new CategoryShopGUI(plugin).open(player, context.getCategory());
+        }
     }
 
     // ---------------------------------------------------------------
