@@ -299,14 +299,9 @@ public class InventoryClickListener implements Listener {
             playSound(player, "purchase-successful");
         }
 
-        plugin.getShopManager().clear(player);
-
-        // Quay lai man shop (thay vi dong han GUI) de nguoi choi mua tiep khong bi kick ra ngoai
-        if ("shard".equals(context.getCategory())) {
-            new ShardShopGUI(plugin).open(player);
-        } else {
-            new CategoryShopGUI(plugin).open(player, context.getCategory());
-        }
+        // Giu nguyen man hinh Mua + giu nguyen so luong da chon, khong quay ve danh sach shop,
+        // de nguoi choi bam "XAC NHAN MUA" lai la mua tiep ngay lap tuc (vd mua 64 end rod lien tuc).
+        new BuyGUI(plugin).updateQuantity(player, quantity);
     }
 
     // ---------------------------------------------------------------
