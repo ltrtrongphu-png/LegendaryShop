@@ -163,24 +163,6 @@ categories:
 # =========================================
 shard-shop:
   icon: AMETHYST_SHARD
-
-  # Chia khoa (item thuong, khong gan plugin nao khac, chi la ItemStack co ten/lore rieng)
-  keys:
-    common-key:
-      material: TRIPWIRE_HOOK
-      display-name: "&7Chia Khoa Thuong (Common Key)"
-      price: 200
-    gold-key:
-      material: TRIPWIRE_HOOK
-      display-name: "&6Chia Khoa Vang (Gold Key)"
-      price: 1500
-    amethyst-key:
-      material: TRIPWIRE_HOOK
-      display-name: "&dChia Khoa Ametit (Amethyst Key)"
-      price: 4000
-
-  # Spawner: khi mua se goi lenh cua SmartSpawner de dua dung loai mob cho nguoi choi
-  # entity-type phai dung ten EntityType cua Bukkit (vd PIG, COW, ZOMBIE, ZOMBIFIED_PIGLIN...)
   spawners:
     pig-spawner:
       entity-type: PIG
