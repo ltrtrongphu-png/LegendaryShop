@@ -17,7 +17,7 @@ public class SellGui {
     public void open(Player player) {
         int rows = plugin.getConfig().getInt("sell.gui-rows", 6);
         int size = Math.max(18, Math.min(54, rows * 9));
-        String title = plugin.getConfig().getString("sell.gui-title", "Ban Vat Pham");
+        String title = plugin.getConfig().getString("sell.gui-title", "Bán Vật Phẩm");
 
         Inventory inv = Bukkit.createInventory(null, size, GuiUtil.colorize(title));
 
@@ -29,9 +29,9 @@ public class SellGui {
         for (int i = lastRowStart; i < size; i++) {
             inv.setItem(i, GuiUtil.filler(Material.GRAY_STAINED_GLASS_PANE));
         }
-        inv.setItem(confirmSlot, GuiUtil.item(Material.EMERALD_BLOCK, "&aXAC NHAN BAN",
+        inv.setItem(confirmSlot, GuiUtil.item(Material.EMERALD_BLOCK, "&aXác Nhận Bán",
                 "&7Ban tat ca vat pham hop le", "&7dang dat trong cac o phia tren"));
-        inv.setItem(cancelSlot, GuiUtil.item(Material.BARRIER, "&cHUY",
+        inv.setItem(cancelSlot, GuiUtil.item(Material.BARRIER, "&cHủy",
                 "&7Tra lai toan bo vat pham"));
 
         player.openInventory(inv);
@@ -42,7 +42,7 @@ public class SellGui {
     }
 
     public static boolean isSellGuiTitle(LegendaryShop plugin, String title) {
-        String expected = GuiUtil.colorize(plugin.getConfig().getString("sell.gui-title", "Ban Vat Pham"));
+        String expected = GuiUtil.colorize(plugin.getConfig().getString("sell.gui-title", "Bán Vật Phẩm"));
         return title.equals(expected);
     }
 }
