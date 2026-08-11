@@ -130,35 +130,13 @@ public class InventoryClickListener implements Listener {
             return;
         }
 
-        List<String> keyIds = ShardShopGUI.getKeyIds(plugin);
         List<String> spawnerIds = ShardShopGUI.getSpawnerIds(plugin);
-        int keyRows = Math.max(1, (int) Math.ceil(keyIds.size() / 9.0));
-        int spawnerStart = 9 + keyRows * 9;
-
-        int keyStartSlot = 12; // phai khop voi ShardShopGUI (cot 4 cua hang key)
-        int keyIndex = slot - keyStartSlot;
-        if (keyIndex >= 0 && keyIndex < keyIds.size()) {
-            openKeyBuyGui(player, keyIds.get(keyIndex));
-            return;
-        }
+        int spawnerStart = 9;
 
         int spawnerIndex = slot - spawnerStart;
         if (spawnerIndex >= 0 && spawnerIndex < spawnerIds.size()) {
             openSpawnerBuyGui(player, spawnerIds.get(spawnerIndex));
         }
-    }
-
-    private void openKeyBuyGui(Player player, String keyId) {
-        ConfigurationSection section = plugin.getConfig().getConfigurationSection("shard-shop.keys." + keyId);
-        if (section == null) return;
-        Material material = Material.matchMaterial(section.getString("material", "TRIPWIRE_HOOK"));
-        if (material == null) material = Material.TRIPWIRE_HOOK;
-        String displayName = section.getString("display-name", GuiUtil.properCase(keyId));
-        double price = section.getDouble("price");
-
-        PurchaseContext context = new PurchaseContext("shard", keyId, material, displayName, price,
-                CurrencyType.SHARDS, false, null, material);
-        new BuyGUI(plugin).open(player, context, 1);
     }
 
     private void openSpawnerBuyGui(Player player, String spawnerId) {
