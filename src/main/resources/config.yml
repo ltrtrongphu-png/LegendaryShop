@@ -30,12 +30,12 @@ sounds:
 categories:
   end:
     display-name: "End"
-    icon: ENDER_CHEST
+    icon: END_STONE
     items:
       enderchest:
         material: ENDER_CHEST
         price: 2500
-      end-enderpearl:
+      enderpearl:
         material: ENDER_PEARL
         price: 75
       endstone:
@@ -95,7 +95,7 @@ categories:
 
   gear:
     display-name: "Gear"
-    icon: DIAMOND_CHESTPLATE
+    icon: TOTEM_OF_UNDYING
     items:
       obsidian:
         material: OBSIDIAN
@@ -112,10 +112,10 @@ categories:
       totemofundying:
         material: TOTEM_OF_UNDYING
         price: 1250
-      gear-enderpearl:
+      enderpearl:
         material: ENDER_PEARL
         price: 75
-      gear-goldenapple:
+      goldenapple:
         material: GOLDEN_APPLE
         price: 250
       bottleofenchanting:
@@ -154,7 +154,7 @@ categories:
       goldencarrot:
         material: GOLDEN_CARROT
         price: 50
-      food-goldenapple:
+      goldenapple:
         material: GOLDEN_APPLE
         price: 250
 
@@ -166,31 +166,31 @@ shard-shop:
   spawners:
     pig-spawner:
       entity-type: PIG
-      price: 250
+      price: 350
     cow-spawner:
       entity-type: COW
-      price: 350
+      price: 450
     zombie-spawner:
       entity-type: ZOMBIE
-      price: 400
+      price: 500
     spider-spawner:
       entity-type: SPIDER
-      price: 750
+      price: 850
     skeleton-spawner:
       entity-type: SKELETON
-      price: 500
+      price: 600
     creeper-spawner:
       entity-type: CREEPER
-      price: 625
+      price: 725
     zombified-piglin-spawner:
       entity-type: ZOMBIFIED_PIGLIN
-      price: 750
+      price: 850
     blaze-spawner:
       entity-type: BLAZE
-      price: 1000
+      price: 1100
     iron-golem-spawner:
       entity-type: IRON_GOLEM
-      price: 1500
+      price: 1600
 
 # =========================================
 # TICH HOP PLUGIN NGOAI
@@ -201,7 +201,7 @@ integrations:
     # Neu doc so du qua PlaceholderAPI bi sai (vd bao thieu Shards du ban co du),
     # dat false de bo qua buoc kiem tra truoc, chi dua vao lenh remove/give ben duoi.
     check-balance-before-purchase: true
-    remove-command: "shards remove %player% %amount%"
+    remove-command: "shards take %player% %amount%"
     give-command: "shards give %player% %amount%"
     # Placeholder PlaceholderAPI de doc so du Shards hien tai cua nguoi choi
     # Da xac nhan dung: %xshards_balance% (kiem tra bang /papi parse <player> %xshards_balance%)
@@ -209,7 +209,7 @@ integrations:
 
   # Lenh console de SmartSpawner dua spawner dung loai mob cho nguoi choi
   smartspawner:
-    give-command: "ss spawner %player% %entitytype% %amount%"
+    give-command: "ss give spawner %player% %entitytype% %amount%"
 
 # =========================================
 # BAN DO (/sell, /sellall, /sellgui)
