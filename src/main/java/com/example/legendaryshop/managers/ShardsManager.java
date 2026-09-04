@@ -48,7 +48,17 @@ public class ShardsManager {
     }
 
     public void withdraw(Player player, double amount) {
-        runCommand("integrations.xshards.remove-command", player, amount);
+        // "remove-command" la ten key chuan. Van chap nhan "take-command" de tuong thich
+        // nguoc voi config cu/go nham, nhung se canh bao ro trong console de biet ma sua.
+        String path = "integrations.xshards.remove-command";
+        if (plugin.getConfig().getString(path) == null
+                && plugin.getConfig().getString("integrations.xshards.take-command") != null) {
+            plugin.getLogger().warning("Config dang dung key 'take-command' (khong duoc code doc toi) thay vi 'remove-command'. "
+                    + "Da tu dong dung tam 'take-command' de Shards van bi tru, nhung HAY DOI TEN KEY trong config.yml "
+                    + "thanh 'remove-command' de tranh loi kho hieu ve sau.");
+            path = "integrations.xshards.take-command";
+        }
+        runCommand(path, player, amount);
     }
 
     public void give(Player player, double amount) {
@@ -61,7 +71,17 @@ public class ShardsManager {
             return;
         }
         String template = plugin.getConfig().getString(path);
-        if (template == null || template.isEmpty()) return;
+        if (template == null || template.isEmpty()) {
+            // Truoc day cho nay "return" am tham, khien viec mua hang bao thanh cong
+            // nhung khong tru duoc Shards nao ma khong ai biet. Gio bat buoc phai canh bao to.
+            plugin.getLogger().severe("[LegendaryShop] KHONG THE chay lenh Shards: thieu config key '" + path
+                    + "' trong config.yml. Nguoi choi se KHONG bi tru/cong Shards cho den khi ban them dong nay vao config!");
+            return;
+        }
+        if (!template.contains("%player%") || !template.contains("%amount%")) {
+            plugin.getLogger().warning("[LegendaryShop] Lenh '" + path + "' trong config.yml thieu placeholder %player% hoac %amount% - "
+                    + "lenh se chay sai vi khong the dien ten nguoi choi/so luong vao dung cho.");
+        }
         long amt = Math.round(amount);
         String command = template.replace("%player%", player.getName()).replace("%amount%", String.valueOf(amt));
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
