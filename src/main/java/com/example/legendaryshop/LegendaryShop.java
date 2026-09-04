@@ -60,6 +60,30 @@ public class LegendaryShop extends JavaPlugin {
         if (!spawnerManager.isAvailable()) {
             getLogger().warning("SmartSpawner khong duoc cai -> khong the dua spawner cho nguoi choi.");
         }
+        validateIntegrationConfig();
+    }
+
+    /**
+     * Kiem tra nhanh cac key config bat buoc cho phan tich hop (XShards, SmartSpawner)
+     * ngay luc khoi dong, thay vi de nguoi choi mua hang xong moi phat hien bi thieu/sai ten key.
+     */
+    private void validateIntegrationConfig() {
+        String[][] requiredKeys = {
+                {"integrations.xshards.remove-command", "Lenh tru Shards khi mua hang (dung 'remove-command', KHONG phai 'take-command')"},
+                {"integrations.xshards.give-command", "Lenh cong Shards"},
+                {"integrations.xshards.balance-placeholder", "Placeholder PlaceholderAPI de doc so du Shards"},
+                {"integrations.smartspawner.give-command", "Lenh dua spawner cho nguoi choi"},
+        };
+        for (String[] entry : requiredKeys) {
+            if (getConfig().getString(entry[0]) == null) {
+                getLogger().severe("[LegendaryShop] THIEU config key '" + entry[0] + "' (" + entry[1]
+                        + "). Chuc nang lien quan se KHONG hoat dong cho den khi them dong nay vao config.yml!");
+            }
+        }
+        if (!getConfig().isConfigurationSection("shard-shop.spawners")) {
+            getLogger().severe("[LegendaryShop] Khong tim thay 'shard-shop.spawners' trong config.yml (chu y: phai viet thuong "
+                    + "'spawners', khong phai 'SPAWNERS'). Shard Shop se khong hien thi spawner nao ca!");
+        }
     }
 
     @Override
