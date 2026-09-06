@@ -24,18 +24,22 @@ public class MainShopGUI {
             inv.setItem(i, filler);
         }
 
+        Material redstoneIcon = getIcon("redstone", Material.REDSTONE);
         Material endIcon = getIcon("end", Material.ENDER_CHEST);
         Material netherIcon = getIcon("nether", Material.NETHERRACK);
         Material gearIcon = getIcon("gear", Material.DIAMOND_CHESTPLATE);
         Material foodIcon = getIcon("food", Material.COOKED_BEEF);
+        Material seedIcon = getIcon("seed", Material.WHEAT_SEEDS);
         Material shardIcon = Material.matchMaterial(plugin.getConfig().getString("shard-shop.icon", "AMETHYST_SHARD"));
         if (shardIcon == null) shardIcon = Material.AMETHYST_SHARD;
 
-        inv.setItem(11, GuiUtil.item(endIcon, "&d" + getName("end", "End"), "&7Nhan de mo shop End"));
-        inv.setItem(12, GuiUtil.item(netherIcon, "&c" + getName("nether", "Nether"), "&7Nhan de mo shop Nether"));
-        inv.setItem(13, GuiUtil.item(gearIcon, "&b" + getName("gear", "Gear"), "&7Nhan de mo shop Gear"));
-        inv.setItem(14, GuiUtil.item(foodIcon, "&a" + getName("food", "Food"), "&7Nhan de mo shop Food"));
-        inv.setItem(15, GuiUtil.item(shardIcon, "&5Shard", "&7Nhan de mo Shard Shop", "&7(Mua bang Shards)"));
+        inv.setItem(10, GuiUtil.item(redstoneIcon, "&c" + getName("redstone", "Redstone"), "&7Nhấn để mở shop Redstone"));
+        inv.setItem(11, GuiUtil.item(endIcon, "&d" + getName("end", "End"), "&7Nhấn để mở shop End"));
+        inv.setItem(12, GuiUtil.item(netherIcon, "&c" + getName("nether", "Nether"), "&7Nhấn để mở shop Nether"));
+        inv.setItem(13, GuiUtil.item(gearIcon, "&b" + getName("gear", "Gear"), "&7Nhấn để mở shop Gear"));
+        inv.setItem(14, GuiUtil.item(foodIcon, "&a" + getName("food", "Food"), "&7Nhấn để mở shop Food"));
+        inv.setItem(15, GuiUtil.item(shardIcon, "&5Shard", "&7Nhấn để mở Shard Shop", "&7(Mua bằng Shards)"));
+        inv.setItem(16, GuiUtil.item(seedIcon, "&2" + getName("seed", "Seed"), "&7Nhấn để mở shop Seed"));
 
         player.openInventory(inv);
     }
