@@ -156,6 +156,81 @@ categories:
         material: GOLDEN_APPLE
         price: 250
 
+  redstone:
+    display-name: "&x&c&0&0&0&0&0ʀ&x&c&f&1&a&1&aᴇ&x&d&e&3&3&3&3ᴅ&x&e&d&4&d&4&dꜱ&x&f&5&6&6&6&6ᴛ&x&f&a&7&a&7&aᴏ&x&f&f&9&9&9&9ɴ&x&f&f&b&3&b&3ᴇ"
+    icon: REDSTONE
+    items:
+      redstone:
+        material: REDSTONE
+        price: 1
+        default-quantity: 16
+      redstoneblock:
+        material: REDSTONE_BLOCK
+        price: 10
+      redstonetorch:
+        material: REDSTONE_TORCH
+        price: 4
+        default-quantity: 8
+      repeater:
+        material: REPEATER
+        price: 40
+      comparator:
+        material: COMPARATOR
+        price: 80
+      piston:
+        material: PISTON
+        price: 60
+      stickypiston:
+        material: STICKY_PISTON
+        price: 150
+      observer:
+        material: OBSERVER
+        price: 200
+      hopper:
+        material: HOPPER
+        price: 300
+
+  seed:
+    display-name: "&x&0&0&c&c&4&4ꜱ&x&3&3&d&9&6&6ᴇ&x&6&6&e&5&8&8ᴇ&x&9&9&f&2&a&aᴅ"
+    icon: WHEAT_SEEDS
+    items:
+      wheatseeds:
+        material: WHEAT_SEEDS
+        price: 1.5
+        default-quantity: 16
+      pumpkinseeds:
+        material: PUMPKIN_SEEDS
+        price: 1.5
+        default-quantity: 16
+      melonseeds:
+        material: MELON_SEEDS
+        price: 1.5
+        default-quantity: 16
+      beetrootseeds:
+        material: BEETROOT_SEEDS
+        price: 1.5
+        default-quantity: 16
+      cocoabeans:
+        material: COCOA_BEANS
+        price: 7
+        default-quantity: 16
+      glowberries:
+        material: GLOW_BERRIES
+        price: 20
+        default-quantity: 16
+      oaksapling:
+        material: OAK_SAPLING
+        price: 3
+        default-quantity: 16
+      netherwart:
+        material: NETHER_WART
+        price: 15
+        default-quantity: 16
+      potato:
+        material: POTATO
+        price: 75
+        default-quantity: 16
+
 # =========================================
 # SHARD SHOP
 # =========================================
