@@ -1,20 +1,18 @@
-# =========================================
-#  LegendaryShop - Config
-# =========================================
-
 gui:
-  main-shop-title: "&8Legendary &6Shop"
-  category-title-prefix: "&8Shop - "   # vd: "Shop - End", "Shop - Nether"...
-  shard-shop-title: "&8Shop - &dShard"
-  buy-gui-title-prefix: "&8Mua - "
+  # Title: LEGENDARY SHOP (Đã chuyển đổi sang mã Hex chuẩn Bukkit &x&f&f&d&7&0&0...)
+  main-shop-title: "&x&f&f&d&7&0&0ʟ&x&f&f&e&2&0&0ᴇ&x&f&f&e&c&0&0ɢ&x&f&f&f&7&0&0ᴇ&x&f&f&e&c&0&0ɴ&x&f&f&e&2&0&0ᴅ&x&f&f&d&7&0&0ᴀ&x&f&f&a&8&0&0ʀ&x&f&f&7&9&0&0ʏ &6ꜱʜᴏᴘ"
+  
+  category-title-prefix: "&x&f&f&f&f&f&fꜱ&x&e&c&e&c&e&cʜ&x&d&9&d&9&d&9ᴏ&x&c&6&c&6&c&6ᴘ &8- "
+  shard-shop-title: "&x&f&f&f&f&f&fꜱ&x&e&c&e&c&e&cʜ&x&d&9&d&9&d&9ᴏ&x&c&6&c&6&c&6ᴘ &8- &x&f&f&7&7&f&fꜱ&x&e&e&8&2&f&eʜ&x&d&c&8&d&f&dᴀ&x&c&b&9&8&f&cʀ&x&b&9&a&3&f&bᴅ"
+  buy-gui-title-prefix: "&x&0&0&f&f&c&cᴍ&x&3&3&f&f&d&6ᴜ&x&6&6&f&f&e&0ᴀ &8- "
 
 messages:
-  not-enough-money: "&cBan khong du tien de mua vat pham nay."
-  not-enough-shards: "&cBan khong du Shards de mua vat pham nay. &7(Can: %price% Shards)"
-  inventory-full: "&cTui do cua ban da day."
-  purchase-success-money: "&fBan da mua &b%amount%x %item% &fvoi gia &a$%price%"
-  purchase-success-shards: "&fBan da mua &b%amount%x %item% &fvoi gia &d%price% Shards"
-  missing-dependency: "&cChuc nang nay can plugin &e%plugin% &cnhung server chua cai. Lien he Admin."
+  not-enough-money: "&cBạn không đủ tiền để mua vật phẩm này."
+  not-enough-shards: "&cBạn không đủ Shards để mua vật phẩm này. &7(Cần: %price% Shards)"
+  inventory-full: "&cTúi đồ của bạn đã đầy."
+  purchase-success-money: "&fBạn đã mua &b%amount%x %item% &fvới giá &a$%price%"
+  purchase-success-shards: "&fBạn đã mua &b%amount%x %item% &fvới giá &d%price% Shards"
+  missing-dependency: "&cChức năng này cần plugin &e%plugin% &cnhưng server chưa cài. Liên hệ Admin."
 
 sounds:
   purchase-successful: "ENTITY_EXPERIENCE_ORB_PICKUP"
@@ -29,7 +27,7 @@ sounds:
 # =========================================
 categories:
   end:
-    display-name: "End"
+    display-name: "&x&a&0&2&0&f&0ᴇ&x&b&1&3&7&f&2ɴ&x&c&2&4&e&f&4ᴅ"
     icon: END_STONE
     items:
       enderchest:
@@ -62,7 +60,7 @@ categories:
         price: 800
 
   nether:
-    display-name: "Nether"
+    display-name: "&x&f&f&3&3&0&0ɴ&x&f&f&5&5&0&0ᴇ&x&f&f&7&7&0&0ᴛ&x&f&f&9&9&0&0ʜ&x&f&f&b&b&0&0ᴇ&x&f&f&d&d&0&0ʀ"
     icon: NETHERRACK
     items:
       blazerod:
@@ -94,7 +92,7 @@ categories:
         price: 150
 
   gear:
-    display-name: "Gear"
+    display-name: "&x&0&0&e&5&f&fɢ&x&2&c&e&8&f&fᴇ&x&5&9&e&b&f&fᴀ&x&8&5&e&e&f&fʀ"
     icon: TOTEM_OF_UNDYING
     items:
       obsidian:
@@ -127,7 +125,7 @@ categories:
         default-quantity: 16
 
   food:
-    display-name: "Food"
+    display-name: "&x&0&0&f&f&6&6ꜰ&x&3&3&f&f&8&5ᴏ&x&6&6&f&f&a&3ᴏ&x&9&9&f&f&c&2ᴅ"
     icon: COOKED_BEEF
     items:
       potato:
@@ -159,36 +157,48 @@ categories:
         price: 250
 
 # =========================================
-# SHARD SHOP (mua bang Shards, dung plugin XShards)
+# SHARD SHOP
+# =========================================
+# =========================================
+# SHARD SHOP
 # =========================================
 shard-shop:
   icon: AMETHYST_SHARD
   spawners:
     pig-spawner:
+      display-name: "&dLồng Heo"
       entity-type: PIG
       price: 350
     cow-spawner:
+      display-name: "&eLồng Bò"
       entity-type: COW
       price: 450
     zombie-spawner:
+      display-name: "&2Lồng Zombie"
       entity-type: ZOMBIE
       price: 500
     spider-spawner:
+      display-name: "&cLồng Nhện"
       entity-type: SPIDER
       price: 850
     skeleton-spawner:
+      display-name: "&fLồng Bộ Xương"
       entity-type: SKELETON
       price: 600
     creeper-spawner:
+      display-name: "&aLồng Creeper"
       entity-type: CREEPER
       price: 725
     zombified-piglin-spawner:
+      display-name: "&eLồng Quỷ Lợn"
       entity-type: ZOMBIFIED_PIGLIN
       price: 850
     blaze-spawner:
+      display-name: "&6Lồng Quỷ Lửa"
       entity-type: BLAZE
       price: 1100
     iron-golem-spawner:
+      display-name: "&fLồng Golem Sắt"
       entity-type: IRON_GOLEM
       price: 1600
 
@@ -196,18 +206,12 @@ shard-shop:
 # TICH HOP PLUGIN NGOAI
 # =========================================
 integrations:
-  # Lenh console de tru/cong Shards cua XShards - %player% va %amount% se duoc thay the
   xshards:
-    # Neu doc so du qua PlaceholderAPI bi sai (vd bao thieu Shards du ban co du),
-    # dat false de bo qua buoc kiem tra truoc, chi dua vao lenh remove/give ben duoi.
     check-balance-before-purchase: true
     remove-command: "shards take %player% %amount%"
     give-command: "shards give %player% %amount%"
-    # Placeholder PlaceholderAPI de doc so du Shards hien tai cua nguoi choi
-    # Da xac nhan dung: %xshards_balance% (kiem tra bang /papi parse <player> %xshards_balance%)
     balance-placeholder: "%xshards_balance%"
 
-  # Lenh console de SmartSpawner dua spawner dung loai mob cho nguoi choi
   smartspawner:
     give-command: "ss give spawner %player% %entitytype% %amount%"
 
@@ -216,589 +220,587 @@ integrations:
 # =========================================
 sell:
   enabled: true
-  gui-title: "&8Ban Vat Pham"
-  gui-rows: 6          # hang cuoi cung danh rieng cho nut Xac nhan/Huy
+  gui-title: "&x&f&f&4&5&0&0ʙ&x&f&f&5&4&0&0á&x&f&f&6&3&0&0ɴ &x&f&f&7&2&0&0ᴠ&x&f&f&8&1&0&0ậ&x&f&f&9&0&0&0ᴛ &x&f&f&9&f&0&0ᴘ&x&f&f&a&e&0&0ʜ&x&f&f&b&d&0&0ẩ&x&f&f&c&c&0&0ᴍ"
+  gui-rows: 6
   confirm-slot: 49
   cancel-slot: 45
 
   messages:
-    not-sellable: "&cVat pham ban dang cam khong the ban."
-    nothing-in-hand: "&cBan dang khong cam vat pham nao ca."
-    sold-hand: "&aDa ban &f%amount%x %item% &avoi gia &a$%price%"
-    sold-all: "&aDa ban &f%count% &aloai vat pham voi tong gia &a$%price%"
-    nothing-to-sell: "&cBan khong co vat pham nao co the ban."
-    gui-sold: "&aDa ban vat pham trong GUI voi gia &a$%price%"
-    gui-cancelled: "&eDa huy, tra lai vat pham cho ban."
-    disabled: "&cChuc nang ban do dang bi tat."
-
-  # Gia ban cho 1 don vi (1 item) = 80% gia mua tham khao (giam 20%).
-  # Bao phu hau het item hop phap thu duoc trong game. Them/bot/sua tuy y.
+    not-sellable: "&x&f&f&4&b&4&bV&x&f&f&5&f&5&fậ&x&f&f&7&3&7&3t &x&f&f&8&7&8&7p&x&f&f&9&b&9&bh&x&f&f&a&f&a&fẩ&x&f&f&c&3&c&3m &x&f&f&d&7&d&7b&x&f&f&e&b&e&bạ&x&f&f&f&f&f&fn &x&f&f&e&b&e&bb&x&f&f&d&7&d&7á&x&f&f&c&3&c&3c&x&f&f&a&f&a&fh &x&f&f&9&b&9&bb&x&f&f&8&7&8&7á&x&f&f&7&3&7&3n &x&f&f&5&f&5&fk&x&f&f&4&b&4&bhó&x&f&f&3&7&3&7n&x&f&f&2&3&2&3g &x&f&f&0&f&0&ft&x&f&f&0&0&0&0hể bán."
+    nothing-in-hand: "&x&f&f&4&b&4&bB&x&f&f&6&3&6&3ạ&x&f&f&7&b&7&bn &x&f&f&9&3&9&3đ&x&f&f&a&b&a&bb&x&f&f&c&3&c&3a&x&f&f&d&b&d&bb&x&f&f&f&3&f&3g &x&f&f&d&b&d&bk&x&f&f&c&3&c&3h&x&f&f&a&b&a&bó&x&f&f&9&3&9&3n&x&f&f&7&b&7&bg &x&f&f&6&3&6&3c&x&f&f&4&b&4&bầ&x&f&f&3&3&3&3m &x&f&f&1&b&1&bv&x&f&f&0&3&0&3ậ&x&f&f&0&0&0&0t phẩm nào."
+    sold-hand: "&x&0&0&f&f&8&7Đ&x&1&d&f&f&9&4ã &x&3&a&f&f&a&1b&x&5&7&f&f&a&ee&x&7&4&f&f&b&bbá&x&9&1&f&f&c&8n &f%amount%x %item% &x&a&e&f&f&d&5v&x&c&b&f&f&e&2ớ&x&e&8&f&f&e&fi &x&f&f&f&f&f&fg&x&e&2&f&f&e&2i&x&c&5&f&f&c&5á &a$%price%"
+    sold-all: "&x&0&0&f&f&8&7Đ&x&1&d&f&f&9&4ã &x&3&a&f&f&a&1b&x&5&7&f&f&a&ee&x&7&4&f&f&b&bbá&x&9&1&f&f&c&8n &f%count% &x&a&e&f&f&d&5l&x&c&b&f&f&e&2o&x&e&8&f&f&e&fạ&x&f&f&f&f&f&fi vật phẩm với tổng giá &a$%price%"
+    nothing-to-sell: "&x&f&f&4&b&4&bB&x&f&f&6&3&6&3ạ&x&f&f&7&b&7&bn &x&f&f&9&3&9&3k&x&f&f&a&b&a&bhó&x&f&f&c&3&c&3n&x&f&f&d&b&d&bg &x&f&f&f&3&f&3c&x&f&f&d&b&d&bó &x&f&f&c&3&c&3v&x&f&f&a&b&a&bậ&x&f&f&9&3&9&3t &x&f&f&7&b&7&bp&x&f&f&6&3&6&3h&x&f&f&4&b&4&bẩ&x&f&f&3&3&3&3m &x&f&f&1&b&1&bn&x&f&f&0&3&0&3à&x&f&f&0&0&0&0o để bán."
+    gui-sold: "&x&0&0&f&f&8&7Đ&x&2&2&f&f&9&7ã &x&4&4&f&f&a&7b&x&6&6&f&f&b&7á&x&8&8&f&f&c&7n &x&a&a&f&f&d&7v&x&c&c&f&f&e&7ậ&x&e&e&f&f&f&7t phẩm trong GUI với giá &a$%price%"
+    gui-cancelled: "&x&f&f&d&7&0&0Đ&x&f&f&c&b&0&0ã &x&f&f&b&f&0&0h&x&f&f&b&3&0&0ủ&x&f&f&a&7&0&0y&x&f&f&9&b&0&0, &x&f&f&8&f&0&0t&x&f&f&8&3&0&0r&x&f&f&7&7&0&0ả &x&f&f&6&b&0&0l&x&f&f&5&f&0&0ạ&x&f&f&5&3&0&0i &x&f&f&4&7&0&0v&x&f&f&3&b&0&0ậ&x&f&f&2&f&0&0t &x&f&f&2&3&0&0p&x&f&f&1&7&0&0h&x&f&f&0&b&0&0ẩ&x&f&f&0&0&0&0m cho bạn."
+    disabled: "&x&f&f&3&3&3&3C&x&f&f&4&5&4&5h&x&f&f&5&7&5&7ứ&x&f&f&6&9&6&9c &x&f&f&7&b&7&bb&x&f&f&8&d&8&dn&x&f&f&9&f&9&fg &x&f&f&b&1&b&1b&x&f&f&c&3&c&3á&x&f&f&d&5&d&5n &x&f&f&e&7&e&7đ&x&f&f&f&9&f&9ồ &x&f&f&e&7&e&7đ&x&f&f&d&5&d&5a&x&f&f&c&3&c&3n&x&f&f&b&1&b&1g &x&f&f&9&f&9&fb&x&f&f&8&d&8&dị &x&f&f&7&b&7&bt&x&f&f&6&9&6&9ắ&x&f&f&5&7&5&7t&x&f&f&4&5&4&5.&x&f&f&3&3&3&3"
   prices:
-    ACACIA_BUTTON: 0.8
-    ACACIA_DOOR: 4
-    ACACIA_FENCE: 0.8
-    ACACIA_FENCE_GATE: 1.6
-    ACACIA_LEAVES: 0.4
-    ACACIA_LOG: 2.4
-    ACACIA_PLANKS: 0.8
-    ACACIA_PRESSURE_PLATE: 1.6
-    ACACIA_SAPLING: 1.6
-    ACACIA_SLAB: 0.8
-    ACACIA_STAIRS: 0.8
-    ACACIA_TRAPDOOR: 3.2
-    ACACIA_WOOD: 2.4
-    AMETHYST_BLOCK: 48
-    AMETHYST_SHARD: 16
-    ANCIENT_DEBRIS: 720
-    ANDESITE: 0.8
-    APPLE: 20
-    ARROW: 200
-    BAKED_POTATO: 24
-    BAMBOO: 0.8
-    BAMBOO_BLOCK: 2.4
-    BAMBOO_LOG: 2.4
-    BAMBOO_PLANKS: 0.8
-    BAMBOO_WOOD: 2.4
-    BASALT: 0.8
-    BEEF: 12
-    BEETROOT: 8
-    BEETROOT_SEEDS: 0.8
-    BEETROOT_SOUP: 12
-    BIRCH_BUTTON: 0.8
-    BIRCH_DOOR: 4
-    BIRCH_FENCE: 0.8
-    BIRCH_FENCE_GATE: 1.6
-    BIRCH_LEAVES: 0.4
-    BIRCH_LOG: 2.4
-    BIRCH_PLANKS: 0.8
-    BIRCH_PRESSURE_PLATE: 1.6
-    BIRCH_SAPLING: 1.6
-    BIRCH_SLAB: 0.8
-    BIRCH_STAIRS: 0.8
-    BIRCH_TRAPDOOR: 3.2
-    BIRCH_WOOD: 2.4
-    BLACKSTONE: 1.6
-    BLACK_BANNER: 12
-    BLACK_BED: 16
-    BLACK_CANDLE: 2.4
-    BLACK_CARPET: 0.8
-    BLACK_CONCRETE: 1.6
-    BLACK_CONCRETE_POWDER: 1.2
-    BLACK_DYE: 2.4
-    BLACK_GLAZED_TERRACOTTA: 12
-    BLACK_SHULKER_BOX: 640
-    BLACK_STAINED_GLASS: 1.2
-    BLACK_STAINED_GLASS_PANE: 0.8
-    BLACK_TERRACOTTA: 1.6
-    BLACK_WOOL: 1.6
-    BLAZE_POWDER: 64
-    BLAZE_ROD: 120
-    BLUE_BANNER: 12
-    BLUE_BED: 16
-    BLUE_CANDLE: 2.4
-    BLUE_CARPET: 0.8
-    BLUE_CONCRETE: 1.6
-    BLUE_CONCRETE_POWDER: 1.2
-    BLUE_DYE: 2.4
-    BLUE_GLAZED_TERRACOTTA: 12
-    BLUE_ICE: 8
-    BLUE_SHULKER_BOX: 640
-    BLUE_STAINED_GLASS: 1.2
-    BLUE_STAINED_GLASS_PANE: 0.8
-    BLUE_TERRACOTTA: 1.6
-    BLUE_WOOL: 1.6
-    BONE: 1.6
-    BONE_BLOCK: 4
-    BONE_MEAL: 0.8
-    BOOK: 8
-    BREAD: 16
-    BRICK: 2.4
-    BROWN_BANNER: 12
-    BROWN_BED: 16
-    BROWN_CANDLE: 2.4
-    BROWN_CARPET: 0.8
-    BROWN_CONCRETE: 1.6
-    BROWN_CONCRETE_POWDER: 1.2
-    BROWN_DYE: 2.4
-    BROWN_GLAZED_TERRACOTTA: 12
-    BROWN_SHULKER_BOX: 640
-    BROWN_STAINED_GLASS: 1.2
-    BROWN_STAINED_GLASS_PANE: 0.8
-    BROWN_TERRACOTTA: 1.6
-    BROWN_WOOL: 1.6
-    BUCKET: 8
-    CAKE: 32
-    CALCITE: 0.8
-    CARROT: 52
-    CHAIN: 6.4
-    CHARCOAL: 3.2
-    CHERRY_BUTTON: 0.8
-    CHERRY_DOOR: 4
-    CHERRY_FENCE: 0.8
-    CHERRY_FENCE_GATE: 1.6
-    CHERRY_LEAVES: 0.4
-    CHERRY_LOG: 2.4
-    CHERRY_PLANKS: 0.8
-    CHERRY_PRESSURE_PLATE: 1.6
-    CHERRY_SAPLING: 1.6
-    CHERRY_SLAB: 0.8
-    CHERRY_STAIRS: 0.8
-    CHERRY_TRAPDOOR: 3.2
-    CHERRY_WOOD: 2.4
-    CHICKEN: 12
-    CHORUS_FLOWER: 4
-    CHORUS_FRUIT: 8
-    CHORUS_PLANT: 4
-    CLAY: 1.6
-    CLAY_BALL: 1.6
-    CLOCK: 16
-    COAL: 4
-    COAL_BLOCK: 32
-    COARSE_DIRT: 0.4
-    COBBLED_DEEPSLATE: 0.8
-    COBBLESTONE: 0.8
-    COCOA_BEANS: 4
-    COD: 8
-    COMPASS: 16
-    COOKED_BEEF: 28
-    COOKED_CHICKEN: 24
-    COOKED_COD: 16
-    COOKED_MUTTON: 24
-    COOKED_PORKCHOP: 28
-    COOKED_RABBIT: 20
-    COOKED_SALMON: 20
-    COOKIE: 8
-    COPPER_BLOCK: 56
-    COPPER_INGOT: 6.4
-    CRIMSON_BUTTON: 0.8
-    CRIMSON_DOOR: 4
-    CRIMSON_FENCE: 0.8
-    CRIMSON_FENCE_GATE: 1.6
-    CRIMSON_HYPHAE: 2.4
-    CRIMSON_PLANKS: 0.8
-    CRIMSON_PRESSURE_PLATE: 1.6
-    CRIMSON_SLAB: 0.8
-    CRIMSON_STAIRS: 0.8
-    CRIMSON_STEM: 2.4
-    CRIMSON_TRAPDOOR: 3.2
-    CRYING_OBSIDIAN: 120
-    CYAN_BANNER: 12
-    CYAN_BED: 16
-    CYAN_CANDLE: 2.4
-    CYAN_CARPET: 0.8
-    CYAN_CONCRETE: 1.6
-    CYAN_CONCRETE_POWDER: 1.2
-    CYAN_DYE: 2.4
-    CYAN_GLAZED_TERRACOTTA: 12
-    CYAN_SHULKER_BOX: 640
-    CYAN_STAINED_GLASS: 1.2
-    CYAN_STAINED_GLASS_PANE: 0.8
-    CYAN_TERRACOTTA: 1.6
-    CYAN_WOOL: 1.6
-    DARK_OAK_BUTTON: 0.8
-    DARK_OAK_DOOR: 4
-    DARK_OAK_FENCE: 0.8
-    DARK_OAK_FENCE_GATE: 1.6
-    DARK_OAK_LEAVES: 0.4
-    DARK_OAK_LOG: 2.4
-    DARK_OAK_PLANKS: 0.8
-    DARK_OAK_PRESSURE_PLATE: 1.6
-    DARK_OAK_SAPLING: 1.6
-    DARK_OAK_SLAB: 0.8
-    DARK_OAK_STAIRS: 0.8
-    DARK_OAK_TRAPDOOR: 3.2
-    DARK_OAK_WOOD: 2.4
-    DARK_PRISMARINE: 16
-    DEEPSLATE: 0.8
-    DIAMOND: 320
-    DIAMOND_BLOCK: 2880
-    DIORITE: 0.8
-    DIRT: 0.4
-    DRAGON_BREATH: 800
-    DRIED_KELP: 2.4
-    DRIPSTONE_BLOCK: 1.6
-    EGG: 6.4
-    ELYTRA: 2400
-    EMERALD: 240
-    EMERALD_BLOCK: 2160
-    ENDER_CHEST: 2000
-    ENDER_EYE: 96
-    ENDER_PEARL: 60
-    END_CRYSTAL: 280
-    END_ROD: 80
-    END_STONE: 6.4
-    END_STONE_BRICKS: 8
-    EXPERIENCE_BOTTLE: 80
-    FEATHER: 2.4
-    FERMENTED_SPIDER_EYE: 8
-    FLINT: 2.4
-    FLINT_AND_STEEL: 16
-    GHAST_TEAR: 280
-    GLASS: 0.8
-    GLASS_BOTTLE: 1.6
-    GLASS_PANE: 0.4
-    GLOWSTONE: 80
-    GLOWSTONE_DUST: 12
-    GLOW_BERRIES: 12
-    GLOW_INK_SAC: 6.4
-    GOLDEN_APPLE: 200
-    GOLDEN_CARROT: 40
-    GOLD_BLOCK: 432
-    GOLD_INGOT: 48
-    GOLD_NUGGET: 6.4
-    GRANITE: 0.8
-    GRASS_BLOCK: 0.4
-    GRAVEL: 0.4
-    GRAY_BANNER: 12
-    GRAY_BED: 16
-    GRAY_CANDLE: 2.4
-    GRAY_CARPET: 0.8
-    GRAY_CONCRETE: 1.6
-    GRAY_CONCRETE_POWDER: 1.2
-    GRAY_DYE: 2.4
-    GRAY_GLAZED_TERRACOTTA: 12
-    GRAY_SHULKER_BOX: 640
-    GRAY_STAINED_GLASS: 1.2
-    GRAY_STAINED_GLASS_PANE: 0.8
-    GRAY_TERRACOTTA: 1.6
-    GRAY_WOOL: 1.6
-    GREEN_BANNER: 12
-    GREEN_BED: 16
-    GREEN_CANDLE: 2.4
-    GREEN_CARPET: 0.8
-    GREEN_CONCRETE: 1.6
-    GREEN_CONCRETE_POWDER: 1.2
-    GREEN_DYE: 2.4
-    GREEN_GLAZED_TERRACOTTA: 12
-    GREEN_SHULKER_BOX: 640
-    GREEN_STAINED_GLASS: 1.2
-    GREEN_STAINED_GLASS_PANE: 0.8
-    GREEN_TERRACOTTA: 1.6
-    GREEN_WOOL: 1.6
-    GUNPOWDER: 4
-    HEART_OF_THE_SEA: 1600
-    HONEYCOMB: 6.4
-    HONEYCOMB_BLOCK: 16
-    HONEY_BOTTLE: 8
-    ICE: 2.4
-    INK_SAC: 4
-    IRON_BLOCK: 280
-    IRON_INGOT: 32
-    IRON_NUGGET: 4
-    JUNGLE_BUTTON: 0.8
-    JUNGLE_DOOR: 4
-    JUNGLE_FENCE: 0.8
-    JUNGLE_FENCE_GATE: 1.6
-    JUNGLE_LEAVES: 0.4
-    JUNGLE_LOG: 2.4
-    JUNGLE_PLANKS: 0.8
-    JUNGLE_PRESSURE_PLATE: 1.6
-    JUNGLE_SAPLING: 1.6
-    JUNGLE_SLAB: 0.8
-    JUNGLE_STAIRS: 0.8
-    JUNGLE_TRAPDOOR: 3.2
-    JUNGLE_WOOD: 2.4
-    KELP: 0.8
-    LANTERN: 8
-    LAPIS_BLOCK: 28
-    LAPIS_LAZULI: 3.2
-    LAVA_BUCKET: 24
-    LEAD: 24
-    LEATHER: 12
-    LIGHT_BLUE_BANNER: 12
-    LIGHT_BLUE_BED: 16
-    LIGHT_BLUE_CANDLE: 2.4
-    LIGHT_BLUE_CARPET: 0.8
-    LIGHT_BLUE_CONCRETE: 1.6
-    LIGHT_BLUE_CONCRETE_POWDER: 1.2
-    LIGHT_BLUE_DYE: 2.4
-    LIGHT_BLUE_GLAZED_TERRACOTTA: 12
-    LIGHT_BLUE_SHULKER_BOX: 640
-    LIGHT_BLUE_STAINED_GLASS: 1.2
-    LIGHT_BLUE_STAINED_GLASS_PANE: 0.8
-    LIGHT_BLUE_TERRACOTTA: 1.6
-    LIGHT_BLUE_WOOL: 1.6
-    LIGHT_GRAY_BANNER: 12
-    LIGHT_GRAY_BED: 16
-    LIGHT_GRAY_CANDLE: 2.4
-    LIGHT_GRAY_CARPET: 0.8
-    LIGHT_GRAY_CONCRETE: 1.6
-    LIGHT_GRAY_CONCRETE_POWDER: 1.2
-    LIGHT_GRAY_DYE: 2.4
-    LIGHT_GRAY_GLAZED_TERRACOTTA: 12
-    LIGHT_GRAY_SHULKER_BOX: 640
-    LIGHT_GRAY_STAINED_GLASS: 1.2
-    LIGHT_GRAY_STAINED_GLASS_PANE: 0.8
-    LIGHT_GRAY_TERRACOTTA: 1.6
-    LIGHT_GRAY_WOOL: 1.6
-    LIME_BANNER: 12
-    LIME_BED: 16
-    LIME_CANDLE: 2.4
-    LIME_CARPET: 0.8
-    LIME_CONCRETE: 1.6
-    LIME_CONCRETE_POWDER: 1.2
-    LIME_DYE: 2.4
-    LIME_GLAZED_TERRACOTTA: 12
-    LIME_SHULKER_BOX: 640
-    LIME_STAINED_GLASS: 1.2
-    LIME_STAINED_GLASS_PANE: 0.8
-    LIME_TERRACOTTA: 1.6
-    LIME_WOOL: 1.6
-    LODESTONE: 160
-    MAGENTA_BANNER: 12
-    MAGENTA_BED: 16
-    MAGENTA_CANDLE: 2.4
-    MAGENTA_CARPET: 0.8
-    MAGENTA_CONCRETE: 1.6
-    MAGENTA_CONCRETE_POWDER: 1.2
-    MAGENTA_DYE: 2.4
-    MAGENTA_GLAZED_TERRACOTTA: 12
-    MAGENTA_SHULKER_BOX: 640
-    MAGENTA_STAINED_GLASS: 1.2
-    MAGENTA_STAINED_GLASS_PANE: 0.8
-    MAGENTA_TERRACOTTA: 1.6
-    MAGENTA_WOOL: 1.6
-    MAGMA_BLOCK: 28
-    MAGMA_CREAM: 12
-    MANGROVE_BUTTON: 0.8
-    MANGROVE_DOOR: 4
-    MANGROVE_FENCE: 0.8
-    MANGROVE_FENCE_GATE: 1.6
-    MANGROVE_LEAVES: 0.4
-    MANGROVE_LOG: 2.4
-    MANGROVE_PLANKS: 0.8
-    MANGROVE_PRESSURE_PLATE: 1.6
-    MANGROVE_SAPLING: 1.6
-    MANGROVE_SLAB: 0.8
-    MANGROVE_STAIRS: 0.8
-    MANGROVE_TRAPDOOR: 3.2
-    MANGROVE_WOOD: 2.4
-    MELON_SEEDS: 0.8
-    MELON_SLICE: 8
-    MILK_BUCKET: 12
-    MOSSY_COBBLESTONE: 1.6
-    MOSS_BLOCK: 2.4
-    MOSS_CARPET: 0.8
-    MUD: 0.4
-    MUDDY_MANGROVE_ROOTS: 0.8
-    MUSHROOM_STEW: 12
-    MUTTON: 9.6
-    MYCELIUM: 0.8
-    NAME_TAG: 240
-    NAUTILUS_SHELL: 120
-    NETHERITE_BLOCK: 23040
-    NETHERITE_INGOT: 2560
-    NETHERITE_SCRAP: 640
-    NETHERRACK: 0.4
-    NETHER_BRICK: 2.4
-    NETHER_STAR: 4000
-    NETHER_WART: 12
-    NETHER_WART_BLOCK: 6.4
-    OAK_BUTTON: 0.8
-    OAK_DOOR: 4
-    OAK_FENCE: 0.8
-    OAK_FENCE_GATE: 1.6
-    OAK_LEAVES: 0.4
-    OAK_LOG: 2.4
-    OAK_PLANKS: 0.8
-    OAK_PRESSURE_PLATE: 1.6
-    OAK_SAPLING: 1.6
-    OAK_SLAB: 0.8
-    OAK_STAIRS: 0.8
-    OAK_TRAPDOOR: 3.2
-    OAK_WOOD: 2.4
-    OBSIDIAN: 80
-    ORANGE_BANNER: 12
-    ORANGE_BED: 16
-    ORANGE_CANDLE: 2.4
-    ORANGE_CARPET: 0.8
-    ORANGE_CONCRETE: 1.6
-    ORANGE_CONCRETE_POWDER: 1.2
-    ORANGE_DYE: 2.4
-    ORANGE_GLAZED_TERRACOTTA: 12
-    ORANGE_SHULKER_BOX: 640
-    ORANGE_STAINED_GLASS: 1.2
-    ORANGE_STAINED_GLASS_PANE: 0.8
-    ORANGE_TERRACOTTA: 1.6
-    ORANGE_WOOL: 1.6
-    PACKED_ICE: 4
-    PALE_OAK_BUTTON: 0.8
-    PALE_OAK_DOOR: 4
-    PALE_OAK_FENCE: 0.8
-    PALE_OAK_FENCE_GATE: 1.6
-    PALE_OAK_LEAVES: 0.4
-    PALE_OAK_LOG: 2.4
-    PALE_OAK_PLANKS: 0.8
-    PALE_OAK_PRESSURE_PLATE: 1.6
-    PALE_OAK_SAPLING: 1.6
-    PALE_OAK_SLAB: 0.8
-    PALE_OAK_STAIRS: 0.8
-    PALE_OAK_TRAPDOOR: 3.2
-    PALE_OAK_WOOD: 2.4
-    PAPER: 0.8
-    PHANTOM_MEMBRANE: 48
-    PINK_BANNER: 12
-    PINK_BED: 16
-    PINK_CANDLE: 2.4
-    PINK_CARPET: 0.8
-    PINK_CONCRETE: 1.6
-    PINK_CONCRETE_POWDER: 1.2
-    PINK_DYE: 2.4
-    PINK_GLAZED_TERRACOTTA: 12
-    PINK_SHULKER_BOX: 640
-    PINK_STAINED_GLASS: 1.2
-    PINK_STAINED_GLASS_PANE: 0.8
-    PINK_TERRACOTTA: 1.6
-    PINK_WOOL: 1.6
-    PODZOL: 0.8
-    POINTED_DRIPSTONE: 1.6
-    POISONOUS_POTATO: 0.8
-    POPPED_CHORUS_FRUIT: 12
-    PORKCHOP: 12
-    POTATO: 60
-    PRISMARINE: 12
-    PRISMARINE_BRICKS: 16
-    PRISMARINE_CRYSTALS: 20
-    PRISMARINE_SHARD: 16
-    PUFFERFISH: 12
-    PUMPKIN: 8
-    PUMPKIN_PIE: 24
-    PUMPKIN_SEEDS: 0.8
-    PURPLE_BANNER: 12
-    PURPLE_BED: 16
-    PURPLE_CANDLE: 2.4
-    PURPLE_CARPET: 0.8
-    PURPLE_CONCRETE: 1.6
-    PURPLE_CONCRETE_POWDER: 1.2
-    PURPLE_DYE: 2.4
-    PURPLE_GLAZED_TERRACOTTA: 12
-    PURPLE_SHULKER_BOX: 640
-    PURPLE_STAINED_GLASS: 1.2
-    PURPLE_STAINED_GLASS_PANE: 0.8
-    PURPLE_TERRACOTTA: 1.6
-    PURPLE_WOOL: 1.6
-    PURPUR_BLOCK: 24
-    PURPUR_PILLAR: 24
-    QUARTZ: 6.4
-    QUARTZ_BLOCK: 56
-    RABBIT: 9.6
-    RABBIT_FOOT: 32
-    RABBIT_HIDE: 6.4
-    RABBIT_STEW: 32
-    RAW_COPPER: 4
-    RAW_GOLD: 36
-    RAW_IRON: 24
-    REDSTONE: 2.4
-    REDSTONE_BLOCK: 20
-    REDSTONE_TORCH: 2.4
-    RED_BANNER: 12
-    RED_BED: 16
-    RED_CANDLE: 2.4
-    RED_CARPET: 0.8
-    RED_CONCRETE: 1.6
-    RED_CONCRETE_POWDER: 1.2
-    RED_DYE: 2.4
-    RED_GLAZED_TERRACOTTA: 12
-    RED_NETHER_BRICK: 4
-    RED_SAND: 0.4
-    RED_SANDSTONE: 0.8
-    RED_SHULKER_BOX: 640
-    RED_STAINED_GLASS: 1.2
-    RED_STAINED_GLASS_PANE: 0.8
-    RED_TERRACOTTA: 1.6
-    RED_WOOL: 1.6
-    RESPAWN_ANCHOR: 800
-    ROOTED_DIRT: 0.4
-    ROTTEN_FLESH: 0.8
-    SADDLE: 160
-    SALMON: 9.6
-    SAND: 0.4
-    SANDSTONE: 0.8
-    SCAFFOLDING: 0.8
-    SCUTE: 80
-    SEA_LANTERN: 48
-    SHROOMLIGHT: 8
-    SHULKER_BOX: 640
-    SHULKER_SHELL: 280
-    SLIME_BALL: 4
-    SMOOTH_BASALT: 1.6
-    SNOWBALL: 0.4
-    SNOW_BLOCK: 0.8
-    SOUL_LANTERN: 9.6
-    SOUL_SAND: 2.4
-    SOUL_SOIL: 1.6
-    SPECTRAL_ARROW: 200
-    SPIDER_EYE: 4
-    SPONGE: 24
-    SPRUCE_BUTTON: 0.8
-    SPRUCE_DOOR: 4
-    SPRUCE_FENCE: 0.8
-    SPRUCE_FENCE_GATE: 1.6
-    SPRUCE_LEAVES: 0.4
-    SPRUCE_LOG: 2.4
-    SPRUCE_PLANKS: 0.8
-    SPRUCE_PRESSURE_PLATE: 1.6
-    SPRUCE_SAPLING: 1.6
-    SPRUCE_SLAB: 0.8
-    SPRUCE_STAIRS: 0.8
-    SPRUCE_TRAPDOOR: 3.2
-    SPRUCE_WOOD: 2.4
-    SPYGLASS: 80
-    STICK: 0.8
-    STONE: 0.8
-    STRING: 1.6
-    SUGAR: 2.4
-    SUGAR_CANE: 2.4
-    SUSPICIOUS_STEW: 8
-    SWEET_BERRIES: 40
-    TARGET: 4
-    TNT: 24
-    TORCH: 0.8
-    TOTEM_OF_UNDYING: 1000
-    TRIDENT: 1200
-    TROPICAL_FISH: 12
-    TUFF: 0.8
-    TURTLE_SCUTE: 80
-    WARPED_BUTTON: 0.8
-    WARPED_DOOR: 4
-    WARPED_FENCE: 0.8
-    WARPED_FENCE_GATE: 1.6
-    WARPED_HYPHAE: 2.4
-    WARPED_PLANKS: 0.8
-    WARPED_PRESSURE_PLATE: 1.6
-    WARPED_SLAB: 0.8
-    WARPED_STAIRS: 0.8
-    WARPED_STEM: 2.4
-    WARPED_TRAPDOOR: 3.2
-    WARPED_WART_BLOCK: 6.4
-    WATER_BUCKET: 9.6
-    WET_SPONGE: 4
-    WHEAT: 4
-    WHEAT_SEEDS: 0.8
-    WHITE_BANNER: 12
-    WHITE_BED: 16
-    WHITE_CANDLE: 2.4
-    WHITE_CARPET: 0.8
-    WHITE_CONCRETE: 1.6
-    WHITE_CONCRETE_POWDER: 1.2
-    WHITE_DYE: 2.4
-    WHITE_GLAZED_TERRACOTTA: 12
-    WHITE_STAINED_GLASS: 1.2
-    WHITE_STAINED_GLASS_PANE: 0.8
-    WHITE_TERRACOTTA: 1.6
-    WHITE_WOOL: 1.6
-    WITHER_SKELETON_SKULL: 1600
-    WRITABLE_BOOK: 8
-    YELLOW_BANNER: 12
-    YELLOW_BED: 16
-    YELLOW_CANDLE: 2.4
-    YELLOW_CARPET: 0.8
-    YELLOW_CONCRETE: 1.6
-    YELLOW_CONCRETE_POWDER: 1.2
-    YELLOW_DYE: 2.4
-    YELLOW_GLAZED_TERRACOTTA: 12
-    YELLOW_SHULKER_BOX: 640
-    YELLOW_STAINED_GLASS: 1.2
-    YELLOW_STAINED_GLASS_PANE: 0.8
-    YELLOW_TERRACOTTA: 1.6
-    YELLOW_WOOL: 1.6
+    ACACIA_BUTTON: 0.5
+    ACACIA_DOOR: 2.5
+    ACACIA_FENCE: 0.5
+    ACACIA_FENCE_GATE: 1.0
+    ACACIA_LEAVES: 0.2
+    ACACIA_LOG: 1.5
+    ACACIA_PLANKS: 0.5
+    ACACIA_PRESSURE_PLATE: 1.0
+    ACACIA_SAPLING: 1.0
+    ACACIA_SLAB: 0.5
+    ACACIA_STAIRS: 0.5
+    ACACIA_TRAPDOOR: 2.0
+    ACACIA_WOOD: 1.5
+    AMETHYST_BLOCK: 8.0
+    AMETHYST_SHARD: 2.5
+    ANCIENT_DEBRIS: 90.0
+    ANDESITE: 0.5
+    APPLE: 4.0
+    ARROW: 0.9
+    BAKED_POTATO: 15.0
+    BAMBOO: 0.5
+    BAMBOO_BLOCK: 1.5
+    BAMBOO_LOG: 1.5
+    BAMBOO_PLANKS: 0.5
+    BAMBOO_WOOD: 1.5
+    BASALT: 0.5
+    BEEF: 1.0
+    BEETROOT: 5.0
+    BEETROOT_SEEDS: 0.5
+    BEETROOT_SOUP: 7.5
+    BIRCH_BUTTON: 0.5
+    BIRCH_DOOR: 2.5
+    BIRCH_FENCE: 0.5
+    BIRCH_FENCE_GATE: 1.0
+    BIRCH_LEAVES: 0.2
+    BIRCH_LOG: 1.5
+    BIRCH_PLANKS: 0.5
+    BIRCH_PRESSURE_PLATE: 1.0
+    BIRCH_SAPLING: 1.0
+    BIRCH_SLAB: 0.5
+    BIRCH_STAIRS: 0.5
+    BIRCH_TRAPDOOR: 2.0
+    BIRCH_WOOD: 1.5
+    BLACKSTONE: 1.0
+    BLACK_BANNER: 7.5
+    BLACK_BED: 10.0
+    BLACK_CANDLE: 1.5
+    BLACK_CARPET: 0.5
+    BLACK_CONCRETE: 1.0
+    BLACK_CONCRETE_POWDER: 0.7
+    BLACK_DYE: 1.5
+    BLACK_GLAZED_TERRACOTTA: 7.5
+    BLACK_SHULKER_BOX: 280.0
+    BLACK_STAINED_GLASS: 0.7
+    BLACK_STAINED_GLASS_PANE: 0.5
+    BLACK_TERRACOTTA: 1.0
+    BLACK_WOOL: 1.0
+    BLAZE_POWDER: 40.0
+    BLAZE_ROD: 75.0
+    BLUE_BANNER: 7.5
+    BLUE_BED: 10.0
+    BLUE_CANDLE: 1.5
+    BLUE_CARPET: 0.5
+    BLUE_CONCRETE: 1.0
+    BLUE_CONCRETE_POWDER: 0.7
+    BLUE_DYE: 1.5
+    BLUE_GLAZED_TERRACOTTA: 7.5
+    BLUE_ICE: 5.0
+    BLUE_SHULKER_BOX: 280.0
+    BLUE_STAINED_GLASS: 0.7
+    BLUE_STAINED_GLASS_PANE: 0.5
+    BLUE_TERRACOTTA: 1.0
+    BLUE_WOOL: 1.0
+    BONE: 1.0
+    BONE_BLOCK: 2.5
+    BONE_MEAL: 0.5
+    BOOK: 5.0
+    BREAD: 10.0
+    BRICK: 1.5
+    BROWN_BANNER: 7.5
+    BROWN_BED: 10.0
+    BROWN_CANDLE: 1.5
+    BROWN_CARPET: 0.5
+    BROWN_CONCRETE: 1.0
+    BROWN_CONCRETE_POWDER: 0.7
+    BROWN_DYE: 1.5
+    BROWN_GLAZED_TERRACOTTA: 7.5
+    BROWN_SHULKER_BOX: 280.0
+    BROWN_STAINED_GLASS: 0.7
+    BROWN_STAINED_GLASS_PANE: 0.5
+    BROWN_TERRACOTTA: 1.0
+    BROWN_WOOL: 1.0
+    BUCKET: 5.0
+    CAKE: 20.0
+    CALCITE: 0.5
+    CARROT: 32.0
+    CHAIN: 4.0
+    CHARCOAL: 2.0
+    CHERRY_BUTTON: 0.5
+    CHERRY_DOOR: 2.5
+    CHERRY_FENCE: 0.5
+    CHERRY_FENCE_GATE: 1.0
+    CHERRY_LEAVES: 0.2
+    CHERRY_LOG: 1.5
+    CHERRY_PLANKS: 0.5
+    CHERRY_PRESSURE_PLATE: 1.0
+    CHERRY_SAPLING: 1.0
+    CHERRY_SLAB: 0.5
+    CHERRY_STAIRS: 0.5
+    CHERRY_TRAPDOOR: 2.0
+    CHERRY_WOOD: 1.5
+    CHICKEN: 1.2
+    CHORUS_FLOWER: 2.5
+    CHORUS_FRUIT: 5.0
+    CHORUS_PLANT: 2.5
+    CLAY: 1.0
+    CLAY_BALL: 1.0
+    CLOCK: 10.0
+    COAL: 1.0
+    COAL_BLOCK: 9.0
+    COARSE_DIRT: 0.2
+    COBBLED_DEEPSLATE: 0.5
+    COBBLESTONE: 0.5
+    COCOA_BEANS: 2.5
+    COD: 1.2
+    COMPASS: 10.0
+    COOKED_BEEF: 2.5
+    COOKED_CHICKEN: 2.5
+    COOKED_COD: 2.0
+    COOKED_MUTTON: 2.0
+    COOKED_PORKCHOP: 2.5
+    COOKED_RABBIT: 2.5
+    COOKED_SALMON: 2.5
+    COOKIE: 5.0
+    COPPER_BLOCK: 9.0
+    COPPER_INGOT: 1.0
+    CRIMSON_BUTTON: 0.5
+    CRIMSON_DOOR: 2.5
+    CRIMSON_FENCE: 0.5
+    CRIMSON_FENCE_GATE: 1.0
+    CRIMSON_HYPHAE: 1.5
+    CRIMSON_PLANKS: 0.5
+    CRIMSON_PRESSURE_PLATE: 1.0
+    CRIMSON_SLAB: 0.5
+    CRIMSON_STAIRS: 0.5
+    CRIMSON_STEM: 1.5
+    CRIMSON_TRAPDOOR: 2.0
+    CRYING_OBSIDIAN: 65.0
+    CYAN_BANNER: 7.5
+    CYAN_BED: 10.0
+    CYAN_CANDLE: 1.5
+    CYAN_CARPET: 0.5
+    CYAN_CONCRETE: 1.0
+    CYAN_CONCRETE_POWDER: 0.7
+    CYAN_DYE: 1.5
+    CYAN_GLAZED_TERRACOTTA: 7.5
+    CYAN_SHULKER_BOX: 280.0
+    CYAN_STAINED_GLASS: 0.7
+    CYAN_STAINED_GLASS_PANE: 0.5
+    CYAN_TERRACOTTA: 1.0
+    CYAN_WOOL: 1.0
+    DARK_OAK_BUTTON: 0.5
+    DARK_OAK_DOOR: 2.5
+    DARK_OAK_FENCE: 0.5
+    DARK_OAK_FENCE_GATE: 1.0
+    DARK_OAK_LEAVES: 0.2
+    DARK_OAK_LOG: 1.5
+    DARK_OAK_PLANKS: 0.5
+    DARK_OAK_PRESSURE_PLATE: 1.0
+    DARK_OAK_SAPLING: 1.0
+    DARK_OAK_SLAB: 0.5
+    DARK_OAK_STAIRS: 0.5
+    DARK_OAK_TRAPDOOR: 2.0
+    DARK_OAK_WOOD: 1.5
+    DARK_PRISMARINE: 10.0
+    DIAMOND: 35.0
+    DIAMOND_BLOCK: 310.0
+    DIORITE: 0.5
+    DIRT: 0.2
+    DRAGON_BREATH: 380.0
+    DRIED_KELP: 5.0
+    DRIED_KELP_BLOCK: 55.0
+    DRIPSTONE_BLOCK: 1.0
+    EGG: 4.0
+    ELYTRA: 1500.0
+    EMERALD: 28.0
+    EMERALD_BLOCK: 250.0
+    ENDER_CHEST: 1200.0
+    ENDER_EYE: 60.0
+    ENDER_PEARL: 38.0
+    END_CRYSTAL: 135.0
+    END_ROD: 50.0
+    END_STONE: 4.0
+    END_STONE_BRICKS: 5.0
+    EXPERIENCE_BOTTLE: 50.0
+    FEATHER: 1.5
+    FERMENTED_SPIDER_EYE: 5.0
+    FLINT: 1.5
+    FLINT_AND_STEEL: 10.0
+    GHAST_TEAR: 135.0
+    GLASS: 0.5
+    GLASS_BOTTLE: 1.0
+    GLASS_PANE: 0.2
+    GLOWSTONE: 50.0
+    GLOWSTONE_DUST: 7.5
+    GLOW_BERRIES: 7.5
+    GLOW_INK_SAC: 4.0
+    GOLDEN_APPLE: 110.0
+    GOLDEN_CARROT: 25.0
+    GOLD_BLOCK: 48.0
+    GOLD_INGOT: 5.0
+    GOLD_NUGGET: 0.5
+    GRANITE: 0.5
+    GRASS_BLOCK: 0.2
+    GRAVEL: 0.2
+    GRAY_BANNER: 7.5
+    GRAY_BED: 10.0
+    GRAY_CANDLE: 1.5
+    GRAY_CARPET: 0.5
+    GRAY_CONCRETE: 1.0
+    GRAY_CONCRETE_POWDER: 0.7
+    GRAY_DYE: 1.5
+    GRAY_GLAZED_TERRACOTTA: 7.5
+    GRAY_SHULKER_BOX: 280.0
+    GRAY_STAINED_GLASS: 0.7
+    GRAY_STAINED_GLASS_PANE: 0.5
+    GRAY_TERRACOTTA: 1.0
+    GRAY_WOOL: 1.0
+    GREEN_BANNER: 7.5
+    GREEN_BED: 10.0
+    GREEN_CANDLE: 1.5
+    GREEN_CARPET: 0.5
+    GREEN_CONCRETE: 1.0
+    GREEN_CONCRETE_POWDER: 0.7
+    GREEN_DYE: 1.5
+    GREEN_GLAZED_TERRACOTTA: 7.5
+    GREEN_SHULKER_BOX: 280.0
+    GREEN_STAINED_GLASS: 0.7
+    GREEN_STAINED_GLASS_PANE: 0.5
+    GREEN_TERRACOTTA: 1.0
+    GREEN_WOOL: 1.0
+    GUNPOWDER: 2.5
+    HEART_OF_THE_SEA: 950.0
+    HONEYCOMB: 4.0
+    HONEYCOMB_BLOCK: 10.0
+    HONEY_BOTTLE: 5.0
+    ICE: 1.5
+    INK_SAC: 2.5
+    IRON_BLOCK: 28.0
+    IRON_INGOT: 3.0
+    IRON_NUGGET: 0.3
+    JUNGLE_BUTTON: 0.5
+    JUNGLE_DOOR: 2.5
+    JUNGLE_FENCE: 0.5
+    JUNGLE_FENCE_GATE: 1.0
+    JUNGLE_LEAVES: 0.2
+    JUNGLE_LOG: 1.5
+    JUNGLE_PLANKS: 0.5
+    JUNGLE_PRESSURE_PLATE: 1.0
+    JUNGLE_SAPLING: 1.0
+    JUNGLE_SLAB: 0.5
+    JUNGLE_STAIRS: 0.5
+    JUNGLE_TRAPDOOR: 2.0
+    JUNGLE_WOOD: 1.5
+    KELP: 5.0
+    LANTERN: 5.0
+    LAPIS_BLOCK: 5.0
+    LAPIS_LAZULI: 0.5
+    LAVA_BUCKET: 15.0
+    LEAD: 15.0
+    LEATHER: 3.8
+    LIGHT_BLUE_BANNER: 7.5
+    LIGHT_BLUE_BED: 10.0
+    LIGHT_BLUE_CANDLE: 1.5
+    LIGHT_BLUE_CARPET: 0.5
+    LIGHT_BLUE_CONCRETE: 1.0
+    LIGHT_BLUE_CONCRETE_POWDER: 0.7
+    LIGHT_BLUE_DYE: 1.5
+    LIGHT_BLUE_GLAZED_TERRACOTTA: 7.5
+    LIGHT_BLUE_SHULKER_BOX: 280.0
+    LIGHT_BLUE_STAINED_GLASS: 0.7
+    LIGHT_BLUE_STAINED_GLASS_PANE: 0.5
+    LIGHT_BLUE_TERRACOTTA: 1.0
+    LIGHT_BLUE_WOOL: 1.0
+    LIGHT_GRAY_BANNER: 7.5
+    LIGHT_GRAY_BED: 10.0
+    LIGHT_GRAY_CANDLE: 1.5
+    LIGHT_GRAY_CARPET: 0.5
+    LIGHT_GRAY_CONCRETE: 1.0
+    LIGHT_GRAY_CONCRETE_POWDER: 0.7
+    LIGHT_GRAY_DYE: 1.5
+    LIGHT_GRAY_GLAZED_TERRACOTTA: 7.5
+    LIGHT_GRAY_SHULKER_BOX: 280.0
+    LIGHT_GRAY_STAINED_GLASS: 0.7
+    LIGHT_GRAY_STAINED_GLASS_PANE: 0.5
+    LIGHT_GRAY_TERRACOTTA: 1.0
+    LIGHT_GRAY_WOOL: 1.0
+    LIME_BANNER: 7.5
+    LIME_BED: 10.0
+    LIME_CANDLE: 1.5
+    LIME_CARPET: 0.5
+    LIME_CONCRETE: 1.0
+    LIME_CONCRETE_POWDER: 0.7
+    LIME_DYE: 1.5
+    LIME_GLAZED_TERRACOTTA: 7.5
+    LIME_SHULKER_BOX: 280.0
+    LIME_STAINED_GLASS: 0.7
+    LIME_STAINED_GLASS_PANE: 0.5
+    LIME_TERRACOTTA: 1.0
+    LIME_WOOL: 1.0
+    LODESTONE: 85.0
+    MAGENTA_BANNER: 7.5
+    MAGENTA_BED: 10.0
+    MAGENTA_CANDLE: 1.5
+    MAGENTA_CARPET: 0.5
+    MAGENTA_CONCRETE: 1.0
+    MAGENTA_CONCRETE_POWDER: 0.7
+    MAGENTA_DYE: 1.5
+    MAGENTA_GLAZED_TERRACOTTA: 7.5
+    MAGENTA_SHULKER_BOX: 280.0
+    MAGENTA_STAINED_GLASS: 0.7
+    MAGENTA_STAINED_GLASS_PANE: 0.5
+    MAGENTA_TERRACOTTA: 1.0
+    MAGENTA_WOOL: 1.0
+    MAGMA_BLOCK: 18.0
+    MAGMA_CREAM: 7.5
+    MANGROVE_BUTTON: 0.5
+    MANGROVE_DOOR: 2.5
+    MANGROVE_FENCE: 0.5
+    MANGROVE_FENCE_GATE: 1.0
+    MANGROVE_LEAVES: 0.2
+    MANGROVE_LOG: 1.5
+    MANGROVE_PLANKS: 0.5
+    MANGROVE_PRESSURE_PLATE: 1.0
+    MANGROVE_SAPLING: 1.0
+    MANGROVE_SLAB: 0.5
+    MANGROVE_STAIRS: 0.5
+    MANGROVE_TRAPDOOR: 2.0
+    MANGROVE_WOOD: 1.5
+    MELON_SEEDS: 0.5
+    MELON_SLICE: 5.0
+    MILK_BUCKET: 7.5
+    MOSSY_COBBLESTONE: 1.0
+    MOSS_BLOCK: 1.5
+    MOSS_CARPET: 0.5
+    MUD: 0.2
+    MUDDY_MANGROVE_ROOTS: 0.5
+    MUSHROOM_STEW: 7.5
+    MUTTON: 1.0
+    MYCELIUM: 0.5
+    NAME_TAG: 120.0
+    NAUTILUS_SHELL: 65.0
+    NETHERITE_BLOCK: 2300.0
+    NETHERITE_INGOT: 250.0
+    NETHERITE_SCRAP: 50.0
+    NETHERRACK: 0.2
+    NETHER_BRICK: 1.5
+    NETHER_STAR: 2400.0
+    NETHER_WART: 7.5
+    NETHER_WART_BLOCK: 4.0
+    OAK_BUTTON: 0.5
+    OAK_DOOR: 2.5
+    OAK_FENCE: 0.5
+    OAK_FENCE_GATE: 1.0
+    OAK_LEAVES: 0.2
+    OAK_LOG: 1.5
+    OAK_PLANKS: 0.5
+    OAK_PRESSURE_PLATE: 1.0
+    OAK_SAPLING: 1.0
+    OAK_SLAB: 0.5
+    OAK_STAIRS: 0.5
+    OAK_TRAPDOOR: 2.0
+    OAK_WOOD: 1.5
+    OBSIDIAN: 50.0
+    ORANGE_BANNER: 7.5
+    ORANGE_BED: 10.0
+    ORANGE_CANDLE: 1.5
+    ORANGE_CARPET: 0.5
+    ORANGE_CONCRETE: 1.0
+    ORANGE_CONCRETE_POWDER: 0.7
+    ORANGE_DYE: 1.5
+    ORANGE_GLAZED_TERRACOTTA: 7.5
+    ORANGE_SHULKER_BOX: 280.0
+    ORANGE_STAINED_GLASS: 0.7
+    ORANGE_STAINED_GLASS_PANE: 0.5
+    ORANGE_TERRACOTTA: 1.0
+    ORANGE_WOOL: 1.0
+    PACKED_ICE: 2.5
+    PALE_OAK_BUTTON: 0.5
+    PALE_OAK_DOOR: 2.5
+    PALE_OAK_FENCE: 0.5
+    PALE_OAK_FENCE_GATE: 1.0
+    PALE_OAK_LEAVES: 0.2
+    PALE_OAK_LOG: 1.5
+    PALE_OAK_PLANKS: 0.5
+    PALE_OAK_PRESSURE_PLATE: 1.0
+    PALE_OAK_SAPLING: 1.0
+    PALE_OAK_SLAB: 0.5
+    PALE_OAK_STAIRS: 0.5
+    PALE_OAK_TRAPDOOR: 2.0
+    PALE_OAK_WOOD: 1.5
+    PAPER: 0.5
+    PHANTOM_MEMBRANE: 30.0
+    PINK_BANNER: 7.5
+    PINK_BED: 10.0
+    PINK_CANDLE: 1.5
+    PINK_CARPET: 0.5
+    PINK_CONCRETE: 1.0
+    PINK_CONCRETE_POWDER: 0.7
+    PINK_DYE: 1.5
+    PINK_GLAZED_TERRACOTTA: 7.5
+    PINK_SHULKER_BOX: 280.0
+    PINK_STAINED_GLASS: 0.7
+    PINK_STAINED_GLASS_PANE: 0.5
+    PINK_TERRACOTTA: 1.0
+    PINK_WOOL: 1.0
+    PODZOL: 0.5
+    POINTED_DRIPSTONE: 1.0
+    POISONOUS_POTATO: 0.5
+    POPPED_CHORUS_FRUIT: 7.5
+    PORKCHOP: 1.0
+    POTATO: 38.0
+    PRISMARINE: 7.5
+    PRISMARINE_BRICKS: 10.0
+    PRISMARINE_CRYSTALS: 12.0
+    PRISMARINE_SHARD: 10.0
+    PUFFERFISH: 7.5
+    PUMPKIN: 5.0
+    PUMPKIN_PIE: 15.0
+    PUMPKIN_SEEDS: 0.5
+    PURPLE_BANNER: 7.5
+    PURPLE_BED: 10.0
+    PURPLE_CANDLE: 1.5
+    PURPLE_CARPET: 0.5
+    PURPLE_CONCRETE: 1.0
+    PURPLE_CONCRETE_POWDER: 0.7
+    PURPLE_DYE: 1.5
+    PURPLE_GLAZED_TERRACOTTA: 7.5
+    PURPLE_SHULKER_BOX: 280.0
+    PURPLE_STAINED_GLASS: 0.7
+    PURPLE_STAINED_GLASS_PANE: 0.5
+    PURPLE_TERRACOTTA: 1.0
+    PURPLE_WOOL: 1.0
+    PURPUR_BLOCK: 15.0
+    PURPUR_PILLAR: 15.0
+    QUARTZ: 0.8
+    QUARTZ_BLOCK: 7.5
+    RABBIT: 1.2
+    RABBIT_FOOT: 20.0
+    RABBIT_HIDE: 4.0
+    RABBIT_STEW: 20.0
+    RAW_COPPER: 0.7
+    RAW_GOLD: 4.0
+    RAW_IRON: 2.5
+    REDSTONE: 0.4
+    REDSTONE_BLOCK: 3.8
+    REDSTONE_TORCH: 1.5
+    RED_BANNER: 7.5
+    RED_BED: 10.0
+    RED_CANDLE: 1.5
+    RED_CARPET: 0.5
+    RED_CONCRETE: 1.0
+    RED_CONCRETE_POWDER: 0.7
+    RED_DYE: 1.5
+    RED_GLAZED_TERRACOTTA: 7.5
+    RED_NETHER_BRICK: 2.5
+    RED_SAND: 0.2
+    RED_SANDSTONE: 0.5
+    RED_SHULKER_BOX: 280.0
+    RED_STAINED_GLASS: 0.7
+    RED_STAINED_GLASS_PANE: 0.5
+    RED_TERRACOTTA: 1.0
+    RED_WOOL: 1.0
+    RESPAWN_ANCHOR: 380.0
+    ROOTED_DIRT: 0.2
+    ROTTEN_FLESH: 0.5
+    SADDLE: 85.0
+    SALMON: 1.2
+    SAND: 0.2
+    SANDSTONE: 0.5
+    SCAFFOLDING: 0.5
+    SCUTE: 42.0
+    SEA_LANTERN: 30.0
+    SEA_PICKLE: 4.0
+    SHROOMLIGHT: 5.0
+    SHULKER_BOX: 280.0
+    SHULKER_SHELL: 135.0
+    SLIME_BALL: 2.5
+    SMOOTH_BASALT: 1.0
+    SNOWBALL: 0.2
+    SNOW_BLOCK: 0.5
+    SOUL_LANTERN: 6.0
+    SOUL_SAND: 1.5
+    SOUL_SOIL: 1.0
+    SPECTRAL_ARROW: 110.0
+    SPIDER_EYE: 2.5
+    SPONGE: 15.0
+    SPRUCE_BUTTON: 0.5
+    SPRUCE_DOOR: 2.5
+    SPRUCE_FENCE: 0.5
+    SPRUCE_FENCE_GATE: 1.0
+    SPRUCE_LEAVES: 0.2
+    SPRUCE_LOG: 1.5
+    SPRUCE_PLANKS: 0.5
+    SPRUCE_PRESSURE_PLATE: 1.0
+    SPRUCE_SAPLING: 1.0
+    SPRUCE_SLAB: 0.5
+    SPRUCE_STAIRS: 0.5
+    SPRUCE_TRAPDOOR: 2.0
+    SPRUCE_WOOD: 1.5
+    SPYGLASS: 42.0
+    STICK: 0.5
+    STONE: 0.5
+    STRING: 1.0
+    SUGAR: 1.5
+    SUGAR_CANE: 1.5
+    SUSPICIOUS_STEW: 5.0
+    SWEET_BERRIES: 25.0
+    TARGET: 2.5
+    TNT: 15.0
+    TORCH: 0.5
+    TOTEM_OF_UNDYING: 600.0
+    TRIDENT: 750.0
+    TROPICAL_FISH: 7.5
+    TUFF: 0.5
+    TURTLE_SCUTE: 42.0
+    WARPED_BUTTON: 0.5
+    WARPED_DOOR: 2.5
+    WARPED_FENCE: 0.5
+    WARPED_FENCE_GATE: 1.0
+    WARPED_HYPHAE: 1.5
+    WARPED_PLANKS: 0.5
+    WARPED_PRESSURE_PLATE: 1.0
+    WARPED_SLAB: 0.5
+    WARPED_STAIRS: 0.5
+    WARPED_STEM: 1.5
+    WARPED_TRAPDOOR: 2.0
+    WARPED_WART_BLOCK: 4.0
+    WATER_BUCKET: 6.0
+    WET_SPONGE: 2.5
+    WHEAT: 2.5
+    WHEAT_SEEDS: 0.5
+    WHITE_BANNER: 7.5
+    WHITE_BED: 10.0
+    WHITE_CANDLE: 1.5
+    WHITE_CARPET: 0.5
+    WHITE_CONCRETE: 1.0
+    WHITE_CONCRETE_POWDER: 0.7
+    WHITE_DYE: 1.5
+    WHITE_GLAZED_TERRACOTTA: 7.5
+    WHITE_STAINED_GLASS: 0.7
+    WHITE_STAINED_GLASS_PANE: 0.5
+    WHITE_TERRACOTTA: 1.0
+    WHITE_WOOL: 1.0
+    WITHER_SKELETON_SKULL: 950.0
+    WRITABLE_BOOK: 5.0
+    YELLOW_BANNER: 7.5
+    YELLOW_BED: 10.0
+    YELLOW_CANDLE: 1.5
+    YELLOW_CARPET: 0.5
+    YELLOW_CONCRETE: 1.0
+    YELLOW_CONCRETE_POWDER: 0.7
+    YELLOW_DYE: 1.5
+    YELLOW_GLAZED_TERRACOTTA: 7.5
+    YELLOW_SHULKER_BOX: 280.0
+    YELLOW_STAINED_GLASS: 0.7
+    YELLOW_STAINED_GLASS_PANE: 0.5
+    YELLOW_TERRACOTTA: 1.0
+    YELLOW_WOOL: 1.0
