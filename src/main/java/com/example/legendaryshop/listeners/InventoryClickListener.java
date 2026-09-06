@@ -19,6 +19,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -27,7 +28,7 @@ import java.util.List;
 public class InventoryClickListener implements Listener {
 
     private final LegendaryShop plugin;
-    private static final List<String> CATEGORIES = List.of("end", "nether", "gear", "food");
+    private static final List<String> CATEGORIES = List.of("end", "nether", "gear", "food", "redstone", "seed");
 
     public InventoryClickListener(LegendaryShop plugin) {
         this.plugin = plugin;
@@ -37,8 +38,15 @@ public class InventoryClickListener implements Listener {
     public void onInventoryClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player player)) return;
         Inventory clicked = event.getClickedInventory();
-        if (clicked == null) return;
-        if (clicked == player.getInventory()) return;
+
+        // Nguoi choi nhan Q / Ctrl+Q de quang do, hoac keo vat pham ra ngoai man hinh de nem:
+        // - clicked == null la truong hop "nem ra ngoai cua so" (raw slot -999).
+        // - clicked == player.getInventory() la truong hop dang thao tac tren tui do that cua ho.
+        // Ca hai truong hop nay LUON duoc cho phep, ke ca khi dang mo shop/dang mua do,
+        // vi day la tui do that cua nguoi choi, khong phai GUI gia cua shop.
+        if (clicked == null || clicked == player.getInventory()) {
+            return;
+        }
 
         String title = event.getView().getTitle();
 
@@ -69,16 +77,51 @@ public class InventoryClickListener implements Listener {
     }
 
     // ---------------------------------------------------------------
+    // Chan keo (drag) vat pham that cua nguoi choi vao GUI gia cua shop,
+    // de tranh mat do/dup do khi GUI dong lai. Van cho phep thoai mai keo/sap xep
+    // do trong chinh tui do cua nguoi choi (kho keo hoan toan o hang duoi).
+    // ---------------------------------------------------------------
+    @EventHandler
+    public void onInventoryDrag(InventoryDragEvent event) {
+        if (!(event.getWhoClicked() instanceof Player player)) return;
+
+        Inventory top = event.getView().getTopInventory();
+        if (top == player.getInventory()) return;
+
+        String title = event.getView().getTitle();
+        if (!isShopTitle(title)) return;
+
+        int topSize = top.getSize();
+        for (int rawSlot : event.getRawSlots()) {
+            if (rawSlot < topSize) {
+                event.setCancelled(true);
+                return;
+            }
+        }
+    }
+
+    private boolean isShopTitle(String title) {
+        if (title.equals(mainTitle())) return true;
+        for (String category : CATEGORIES) {
+            if (title.equals(categoryTitle(category))) return true;
+        }
+        if (title.equals(shardTitle())) return true;
+        return ChatColor.stripColor(title).startsWith(ChatColor.stripColor(buyPrefix()));
+    }
+
+    // ---------------------------------------------------------------
     // MAIN SHOP
     // ---------------------------------------------------------------
     private void handleMainShop(InventoryClickEvent event, Player player) {
         playSound(player, "click");
         switch (event.getSlot()) {
+            case 10 -> new CategoryShopGUI(plugin).open(player, "redstone");
             case 11 -> new CategoryShopGUI(plugin).open(player, "end");
             case 12 -> new CategoryShopGUI(plugin).open(player, "nether");
             case 13 -> new CategoryShopGUI(plugin).open(player, "gear");
             case 14 -> new CategoryShopGUI(plugin).open(player, "food");
             case 15 -> new ShardShopGUI(plugin).open(player);
+            case 16 -> new CategoryShopGUI(plugin).open(player, "seed");
             default -> {
             }
         }
