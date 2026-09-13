@@ -19,7 +19,7 @@ public class CategoryShopGUI {
         this.plugin = plugin;
     }
 
-    /** Danh sach id vat pham theo dung thu tu trong config (dung de map slot -> item o listener). */
+    /** Danh sách id vật phẩm theo đúng thứ tự trong config (dùng để map slot -> item ở listener). */
     public static List<String> getItemIds(LegendaryShop plugin, String category) {
         List<String> ids = new ArrayList<>();
         ConfigurationSection section = plugin.getConfig().getConfigurationSection("categories." + category + ".items");
@@ -61,19 +61,26 @@ public class CategoryShopGUI {
             }
             Material material = Material.matchMaterial(itemSection.getString("material", "STONE"));
             if (material == null) material = Material.STONE;
+
+            // Nếu là spacer (AIR) -> chỉ chiếm slot, không render item, không cần price
+            if (material == Material.AIR) {
+                slot++;
+                continue;
+            }
+
             double price = itemSection.getDouble("price");
             String niceName = GuiUtil.properCase(id);
 
             inv.setItem(slot, GuiUtil.item(material,
                     "&f" + niceName,
-                    "&7Gia: &a$" + formatPrice(price),
+                    "&7Giá: &a$" + formatPrice(price),
                     "",
-                    "&eNhan de mua"));
+                    "&eNhấn để mua"));
             slot++;
         }
 
         int backSlot = backButtonSlot(size);
-        inv.setItem(backSlot, GuiUtil.item(Material.ARROW, "&cQuay lai", "&7Tro ve shop chinh"));
+        inv.setItem(backSlot, GuiUtil.item(Material.ARROW, "&cQuay lại", "&7Trở về shop chính"));
 
         player.openInventory(inv);
     }
