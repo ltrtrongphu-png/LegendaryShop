@@ -39,11 +39,7 @@ public class InventoryClickListener implements Listener {
         if (!(event.getWhoClicked() instanceof Player player)) return;
         Inventory clicked = event.getClickedInventory();
 
-        // Nguoi choi nhan Q / Ctrl+Q de quang do, hoac keo vat pham ra ngoai man hinh de nem:
-        // - clicked == null la truong hop "nem ra ngoai cua so" (raw slot -999).
-        // - clicked == player.getInventory() la truong hop dang thao tac tren tui do that cua ho.
-        // Ca hai truong hop nay LUON duoc cho phep, ke ca khi dang mo shop/dang mua do,
-        // vi day la tui do that cua nguoi choi, khong phai GUI gia cua shop.
+        // Cho phep thao tac tren tui do that cua nguoi choi va khi nem vat pham ra ngoai.
         if (clicked == null || clicked == player.getInventory()) {
             return;
         }
@@ -76,11 +72,6 @@ public class InventoryClickListener implements Listener {
         }
     }
 
-    // ---------------------------------------------------------------
-    // Chan keo (drag) vat pham that cua nguoi choi vao GUI gia cua shop,
-    // de tranh mat do/dup do khi GUI dong lai. Van cho phep thoai mai keo/sap xep
-    // do trong chinh tui do cua nguoi choi (kho keo hoan toan o hang duoi).
-    // ---------------------------------------------------------------
     @EventHandler
     public void onInventoryDrag(InventoryDragEvent event) {
         if (!(event.getWhoClicked() instanceof Player player)) return;
@@ -146,7 +137,8 @@ public class InventoryClickListener implements Listener {
         if (index < 0 || index >= itemIds.size()) return;
         String itemId = itemIds.get(index);
 
-        ConfigurationSection section = plugin.getConfig().getConfigurationSection("categories." + category + ".items." + itemId);
+        ConfigurationSection section = plugin.getConfig()
+                .getConfigurationSection("categories." + category + ".items." + itemId);
         if (section == null) return;
 
         Material material = Material.matchMaterial(section.getString("material", "STONE"));
@@ -183,7 +175,8 @@ public class InventoryClickListener implements Listener {
     }
 
     private void openSpawnerBuyGui(Player player, String spawnerId) {
-        ConfigurationSection section = plugin.getConfig().getConfigurationSection("shard-shop.spawners." + spawnerId);
+        ConfigurationSection section = plugin.getConfig()
+                .getConfigurationSection("shard-shop.spawners." + spawnerId);
         if (section == null) return;
         String entityTypeName = section.getString("entity-type", "PIG");
         EntityType entityType;
@@ -202,7 +195,7 @@ public class InventoryClickListener implements Listener {
     }
 
     // ---------------------------------------------------------------
-    // BUY GUI (quantity + confirm) - dung chung cho ca MONEY va SHARDS
+    // BUY GUI (quantity + confirm)
     // ---------------------------------------------------------------
     private void handleBuyGUI(InventoryClickEvent event, Player player) {
         PurchaseContext context = plugin.getShopManager().getPurchaseContext(player);
@@ -286,18 +279,19 @@ public class InventoryClickListener implements Listener {
                 return;
             }
 
-            boolean checkBalance = plugin.getConfig().getBoolean("integrations.xshards.check-balance-before-purchase", true);
+            boolean checkBalance = plugin.getConfig()
+                    .getBoolean("integrations.xshards.check-balance-before-purchase", true);
             if (checkBalance && shards.isBalanceCheckAvailable()) {
                 double balance = shards.getBalance(player);
                 if (balance >= 0 && balance < totalPrice) {
-                    player.sendMessage(plugin.msg("not-enough-shards").replace("%price%", formatNumber(totalPrice)));
+                    player.sendMessage(plugin.msg("not-enough-shards")
+                            .replace("%price%", formatNumber(totalPrice)));
                     playSound(player, "purchase-unsuccessful");
                     return;
                 }
             }
 
             if (context.isSpawner()) {
-                // SmartSpawner tu xu ly khi tui do day (roi vat pham xuong dat), nen khong can kiem tra truoc.
                 shards.withdraw(player, totalPrice);
                 plugin.getSpawnerManager().giveSpawner(player, context.getEntityType(), quantity);
             } else {
@@ -320,8 +314,6 @@ public class InventoryClickListener implements Listener {
             playSound(player, "purchase-successful");
         }
 
-        // Giu nguyen man hinh Mua + giu nguyen so luong da chon, khong quay ve danh sach shop,
-        // de nguoi choi bam "XAC NHAN MUA" lai la mua tiep ngay lap tuc (vd mua 64 end rod lien tuc).
         new BuyGUI(plugin).updateQuantity(player, quantity);
     }
 
@@ -340,16 +332,35 @@ public class InventoryClickListener implements Listener {
             }
             if (remaining <= 0) return true;
         }
-        return remaining <= 0;
+        return false;
     }
 
+    // ===============================================================
+    // FIX CHINH: Sound.valueOf() gay NullPointerException tren Paper 1.20.5+
+    // vi key registry cua mot so sound (UI_BUTTON_CLICK, ...) la null.
+    // => Dung API playSound(Location, String, ...) cua Paper, fallback ve
+    //    enum Sound neu server cu, va bat Throwable de khong bao gio crash event.
+    // ===============================================================
     private void playSound(Player player, String soundType) {
-        String soundName = plugin.getConfig().getString("sounds." + soundType, "");
+        String rawName = plugin.getConfig().getString("sounds." + soundType, "");
+        if (rawName == null || rawName.isEmpty()) return;
+
         float volume = (float) plugin.getConfig().getDouble("sounds." + soundType + "-volume", 0.5);
+
+        // Thu 1: Paper API nhan truc tiep ten sound dang String (namespace hien dai).
         try {
-            Sound sound = Sound.valueOf(soundName.toUpperCase());
+            player.playSound(player.getLocation(), rawName.toLowerCase(), volume, 1.0f);
+            return;
+        } catch (Throwable ignored) {
+            // Server khong ho tro -> fallback.
+        }
+
+        // Thu 2: Fallback cho server cu, dung enum Sound.
+        try {
+            Sound sound = Sound.valueOf(rawName.toUpperCase());
             player.playSound(player.getLocation(), sound, volume, 1.0f);
-        } catch (IllegalArgumentException ignored) {
+        } catch (Throwable ignored) {
+            // Sound khong hop le trong ca 2 cach -> bo qua, khong lam sap event.
         }
     }
 
