@@ -125,13 +125,31 @@ public class LegendaryShop extends JavaPlugin {
         return ChatColor.translateAlternateColorCodes('&', m);
     }
 
+    // ===============================================================
+    // FIX NPE: Sound.valueOf() co the nem NullPointerException tren
+    // Paper 1.20.5+ khi key registry cua sound bi null.
+    // => Dung API String truoc, fallback ve enum Sound, bat Throwable.
+    // ===============================================================
     public void playSellSound(Player player) {
-        String soundName = getConfig().getString("sounds.purchase-successful", "");
+        String rawName = getConfig().getString("sounds.purchase-successful", "");
+        if (rawName == null || rawName.isEmpty()) return;
+
         float volume = (float) getConfig().getDouble("sounds.purchase-successful-volume", 0.5);
+
+        // Cach 1: Paper API nhan ten sound dang String (namespace hien dai)
         try {
-            Sound sound = Sound.valueOf(soundName.toUpperCase());
+            player.playSound(player.getLocation(), rawName.toLowerCase(), volume, 1.0f);
+            return;
+        } catch (Throwable ignored) {
+            // Server khong ho tro -> fallback.
+        }
+
+        // Cach 2: Fallback cho server cu, dung enum Sound
+        try {
+            Sound sound = Sound.valueOf(rawName.toUpperCase());
             player.playSound(player.getLocation(), sound, volume, 1.0f);
-        } catch (IllegalArgumentException ignored) {
+        } catch (Throwable ignored) {
+            // Sound khong hop le trong ca 2 cach -> bo qua, khong crash
         }
     }
 
